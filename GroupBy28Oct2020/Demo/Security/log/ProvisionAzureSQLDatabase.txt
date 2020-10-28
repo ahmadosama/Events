@@ -1,0 +1,502 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20201025060722
+Username: appvm\aosama
+RunAs User: appvm\aosama
+Configuration Name: 
+Machine: appvm (Microsoft Windows NT 10.0.17763.0)
+Host Application: powershell -noninteractive -noprofile -File -
+Process ID: 3092
+PSVersion: 5.1.17763.1007
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17763.1007
+BuildVersion: 10.0.17763.1007
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is .\log\ProvisionAzureSQLDatabase.txt
+PS>TerminatingError(Get-AzSqlServer): "Cannot validate argument on parameter 'ServerName'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+Get-AzSqlServer : Cannot validate argument on parameter 'ServerName'. The argument is null or empty. Provide an 
+argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\ServiceEndpoint-SQLDB.ps1:53 char:78
++ ... ver -ResourceGroupName $resourcegroup -ServerName $azuresqlservername
++                                                       ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-AzSqlServer], ParameterBindingValidationException
+    + FullyQualifiedErrorId : 
+ParameterArgumentValidationError,Microsoft.Azure.Commands.Sql.Server.Cmdlet.GetAzureSqlServer
+Get-AzSqlServer : Cannot validate argument on parameter 'ServerName'. The argument is null or empty. Provide an
+argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\ServiceEndpoint-SQLDB.ps1:53 char:78
++ ... ver -ResourceGroupName $resourcegroup -ServerName $azuresqlservername
++                                                       ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-AzSqlServer], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.Azure.Commands.Sql.Server.Cmdlet.GetAzureSqlS
+   erver
+
+WARNING: Upcoming breaking changes in the cmdlet 'Set-AzVirtualNetworkSubnetConfig' :
+Update Property Name
+Cmdlet invocation changes :
+    Old Way : -ResourceId
+    New Way : -NatGatewayId
+Update Property Name
+Cmdlet invocation changes :
+    Old Way : -InputObject
+    New Way : -NatGateway
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Network/virtualNetworks/demo-vnet/subnets/appnet
+PS>TerminatingError(New-AzSqlServerVirtualNetworkRule): "Cannot validate argument on parameter 'ServerName'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+New-AzSqlServerVirtualNetworkRule : Cannot validate argument on parameter 'ServerName'. The argument is null or empty. 
+Provide an argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\ServiceEndpoint-SQLDB.ps1:67 char:13
++ -ServerName $azuresqlservername `
++             ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzSqlServerVirtualNetworkRule], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.Azure.Commands.Sql.VirtualNetworkRule.Cmdlet.Ne
+wAzureSqlServerVirtualNetworkRule
+New-AzSqlServerVirtualNetworkRule : Cannot validate argument on parameter 'ServerName'. The argument is null or empty.
+Provide an argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\ServiceEndpoint-SQLDB.ps1:67 char:13
++ -ServerName $azuresqlservername `
++             ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzSqlServerVirtualNetworkRule], ParameterBindingValidationExceptio
+   n
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.Azure.Commands.Sql.VirtualNetworkRule.Cmdlet.
+   NewAzureSqlServerVirtualNetworkRule
+
+^$global:?
+True
+**********************
+Windows PowerShell transcript end
+End time: 20201025060839
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20201025060845
+Username: appvm\aosama
+RunAs User: appvm\aosama
+Configuration Name: 
+Machine: appvm (Microsoft Windows NT 10.0.17763.0)
+Host Application: powershell -noninteractive -noprofile -File -
+Process ID: 2996
+PSVersion: 5.1.17763.1007
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17763.1007
+BuildVersion: 10.0.17763.1007
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is .\log\ProvisionAzureSQLDatabase.txt
+WARNING: Upcoming breaking changes in the cmdlet 'Set-AzVirtualNetworkSubnetConfig' :
+Update Property Name
+Cmdlet invocation changes :
+    Old Way : -ResourceId
+    New Way : -NatGatewayId
+Update Property Name
+Cmdlet invocation changes :
+    Old Way : -InputObject
+    New Way : -NatGateway
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Network/virtualNetworks/demo-vnet/subnets/appnet
+
+ResourceGroupName    ServerName           VirtualNetworkRuleName    State           VirtualNetworkSubnetId
+-----------------    ----------           ----------------------    -----           ----------------------
+demo                 aoazsqlserver        demo-vnet                 Ready           /subscriptions/b85b0984-a391-4f22-a
+                                                                                    832-fb6e46c39f38/resourceGroups/dem
+                                                                                    o/providers/Microsoft.Network/virtu
+                                                                                    alNetworks/demo-vnet/subnets/appnet
+
+
+^. {
+>> . {
+Set-Location "C:\GroupBy\Demo\Security"
+.\ServiceEndpoint-SQLDB.ps1 -vnetname demo-vnet `
+ -resourcegroup demo `
+ -subnetname appnet `
+ -sqlserver aoazsqlserver `
+ -AzureProfileFilePath C:\GroupBy\MyAzureProfile.json
+}
+Transcript started, output file is .\log\ProvisionAzureSQLDatabase.txt
+WARNING: Upcoming breaking changes in the cmdlet 'Set-AzVirtualNetworkSubnetConfig' :
+Update Property Name
+Cmdlet invocation changes :
+    Old Way : -ResourceId
+    New Way : -NatGatewayId
+Update Property Name
+Cmdlet invocation changes :
+    Old Way : -InputObject
+    New Way : -NatGateway
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Network/virtualNetworks/demo-vnet/subnets/appnet
+New-AzSqlServerVirtualNetworkRule : Virtual Network Rule with name: 'demo-vnet' already exists for server 
+'aoazsqlserver'
+At C:\GroupBy\Demo\Security\ServiceEndpoint-SQLDB.ps1:66 char:1
++ New-AzSqlServerVirtualNetworkRule -ResourceGroupName $resourcegroup `
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzSqlServerVirtualNetworkRule], PSArgumentException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.VirtualNetworkRule.Cmdlet.NewAzureSqlServerVirtualNetworkRule
+New-AzSqlServerVirtualNetworkRule : Virtual Network Rule with name: 'demo-vnet' already exists for server
+'aoazsqlserver'
+At C:\GroupBy\Demo\Security\ServiceEndpoint-SQLDB.ps1:66 char:1
++ New-AzSqlServerVirtualNetworkRule -ResourceGroupName $resourcegroup `
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzSqlServerVirtualNetworkRule], PSArgumentException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.VirtualNetworkRule.Cmdlet.NewAzureSqlServerVirtualNetworkRu
+   le
+
+^. {
+>> . {
+Set-Location "C:\GroupBy\Demo\Security"
+.\PrivateEndpoint-SQLDB.ps1 =vnetname demo-vnet `
+-PrivateEndpointname sqlprivateendpoint `
+-resourcegroup demo `
+-subnetname appnet `
+-sqlserver azaosqlserver `
+-AzureProfileFilePath C:\GroupBy\MyAzureProfile.json
+}
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:55 char:1
++ )
++ ~
+Unexpected token ')' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParseException
+    + FullyQualifiedErrorId : UnexpectedToken
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:55 char:1
++ )
++ ~
+Unexpected token ')' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParseException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+^. {
+>> . {
+Set-Location "C:\GroupBy\Demo\Security"
+.\PrivateEndpoint-SQLDB.ps1 =vnetname demo-vnet `
+-PrivateEndpointname sqlprivateendpoint `
+-resourcegroup demo `
+-subnetname appnet `
+-sqlserver azaosqlserver `
+-AzureProfileFilePath C:\GroupBy\MyAzureProfile.json
+}
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:55 char:1
++ )
++ ~
+Unexpected token ')' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParseException
+    + FullyQualifiedErrorId : UnexpectedToken
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:55 char:1
++ )
++ ~
+Unexpected token ')' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParseException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+^. {
+>> . {
+Set-Location "C:\GroupBy\Demo\Security"
+.\PrivateEndpoint-SQLDB.ps1 =vnetname demo-vnet `
+-PrivateEndpointname sqlprivateendpoint `
+-resourcegroup demo `
+-subnetname appnet `
+-sqlserver azaosqlserver `
+-AzureProfileFilePath C:\GroupBy\MyAzureProfile.json
+}
+^TerminatingError(PrivateEndpoint-SQLDB.ps1): "A positional parameter cannot be found that accepts argument 'demo-vnet'."
+C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1 : A positional parameter cannot be found that accepts argument 
+'demo-vnet'.
+At line:3 char:1
++ .\PrivateEndpoint-SQLDB.ps1 =vnetname demo-vnet `
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [PrivateEndpoint-SQLDB.ps1], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,PrivateEndpoint-SQLDB.ps1
+C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1 : A positional parameter cannot be found that accepts argument
+'demo-vnet'.
+At line:3 char:1
++ .\PrivateEndpoint-SQLDB.ps1 =vnetname demo-vnet `
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [PrivateEndpoint-SQLDB.ps1], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,PrivateEndpoint-SQLDB.ps1
+
+^. {
+>> . {
+Set-Location "C:\GroupBy\Demo\Security"
+.\PrivateEndpoint-SQLDB.ps1 =vnetname demo-vnet `
+-PrivateEndpointname sqlprivateendpoint `
+-resourcegroup demo `
+-subnetname appnet `
+-sqlserver azaosqlserver `
+-AzureProfileFilePath C:\GroupBy\MyAzureProfile.json
+}
+^TerminatingError(PrivateEndpoint-SQLDB.ps1): "A positional parameter cannot be found that accepts argument 'demo-vnet'."
+C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1 : A positional parameter cannot be found that accepts argument 
+'demo-vnet'.
+At line:3 char:1
++ .\PrivateEndpoint-SQLDB.ps1 =vnetname demo-vnet `
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [PrivateEndpoint-SQLDB.ps1], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,PrivateEndpoint-SQLDB.ps1
+C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1 : A positional parameter cannot be found that accepts argument
+'demo-vnet'.
+At line:3 char:1
++ .\PrivateEndpoint-SQLDB.ps1 =vnetname demo-vnet `
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [PrivateEndpoint-SQLDB.ps1], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,PrivateEndpoint-SQLDB.ps1
+
+^. {
+>> . {
+Set-Location "C:\GroupBy\Demo\Security"
+.\PrivateEndpoint-SQLDB.ps1 -vnetname demo-vnet `
+-PrivateEndpointname sqlprivateendpoint `
+-resourcegroup demo `
+-subnetname appnet `
+-sqlserver azaosqlserver `
+-AzureProfileFilePath C:\GroupBy\MyAzureProfile.json
+}
+Transcript started, output file is .\log\PrivateEndpoint-SQLDB.txt
+Get-AzSqlServer : The Resource 'Microsoft.Sql/servers/azaosqlserver' under resource group 'demo' was not found. For 
+more details please go to https://aka.ms/ARMResourceNotFoundFix
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:59 char:16
++ ... sqlserver = Get-AzSqlServer -ResourceGroupName $resourcegroup -Server ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzSqlServer], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Server.Cmdlet.GetAzureSqlServer
+Get-AzSqlServer : The Resource 'Microsoft.Sql/servers/azaosqlserver' under resource group 'demo' was not found. For
+more details please go to https://aka.ms/ARMResourceNotFoundFix
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:59 char:16
++ ... sqlserver = Get-AzSqlServer -ResourceGroupName $resourcegroup -Server ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzSqlServer], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Server.Cmdlet.GetAzureSqlServer
+
+^TerminatingError(New-AzPrivateLinkServiceConnection): "Cannot validate argument on parameter 'PrivateLinkServiceId'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+New-AzPrivateLinkServiceConnection : Cannot validate argument on parameter 'PrivateLinkServiceId'. The argument is null 
+or empty. Provide an argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:63 char:25
++   -PrivateLinkServiceId $azsqlserver.ResourceId `
++                         ~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateLinkServiceConnection], ParameterBindingValidationException
+    + FullyQualifiedErrorId : 
+ParameterArgumentValidationError,Microsoft.Azure.Commands.Network.NewAzurePrivateLinkServiceConnectionCommand
+New-AzPrivateLinkServiceConnection : Cannot validate argument on parameter 'PrivateLinkServiceId'. The argument is
+null or empty. Provide an argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:63 char:25
++   -PrivateLinkServiceId $azsqlserver.ResourceId `
++                         ~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateLinkServiceConnection], ParameterBindingValidationExcepti
+   on
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.Azure.Commands.Network.NewAzurePrivateLinkSer
+   viceConnectionCommand
+
+^TerminatingError(New-AzPrivateEndpoint): "Cannot bind argument to parameter 'PrivateLinkServiceConnection' because it is null."
+New-AzPrivateEndpoint : Cannot bind argument to parameter 'PrivateLinkServiceConnection' because it is null.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:76 char:33
++   -PrivateLinkServiceConnection $pecon
++                                 ~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateEndpoint], ParameterBindingValidationException
+    + FullyQualifiedErrorId : 
+ParameterArgumentValidationErrorNullNotAllowed,Microsoft.Azure.Commands.Network.NewAzurePrivateEndpoint
+New-AzPrivateEndpoint : Cannot bind argument to parameter 'PrivateLinkServiceConnection' because it is null.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:76 char:33
++   -PrivateLinkServiceConnection $pecon
++                                 ~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateEndpoint], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.Azure.Commands.Network.NewAzure
+   PrivateEndpoint
+
+
+
+Name                    : vnetdnszonelink
+ResourceId              : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.N
+                          etwork/privateDnsZones/privatelink.database.windows.net/virtualNetworkLinks/vnetdnszonelink
+ResourceGroupName       : demo
+ZoneName                : privatelink.database.windows.net
+VirtualNetworkId        : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.N
+                          etwork/virtualNetworks/demo-vnet
+Location                :
+Etag                    : "6f00be72-0000-0100-0000-5f9518f30000"
+Tags                    :
+RegistrationEnabled     : False
+VirtualNetworkLinkState : Completed
+ProvisioningState       : Succeeded
+
+New-AzPrivateDnsZoneGroup : The Resource 'Microsoft.Network/privateEndpoints/sqlprivateendpoint' under resource group 
+'demo' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+StatusCode: 404
+ReasonPhrase: Not Found
+ErrorCode: ResourceNotFound
+ErrorMessage: The Resource 'Microsoft.Network/privateEndpoints/sqlprivateendpoint' under resource group 'demo' was not 
+found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+OperationID : ae4deac9-e69d-478d-afd3-ea3e0b6cccb0
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:88 char:1
++ New-AzPrivateDnsZoneGroup -ResourceGroupName $resourcegroup `
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsZoneGroup], NetworkCloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneGroupCommand
+New-AzPrivateDnsZoneGroup : The Resource 'Microsoft.Network/privateEndpoints/sqlprivateendpoint' under resource group
+'demo' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+StatusCode: 404
+ReasonPhrase: Not Found
+ErrorCode: ResourceNotFound
+ErrorMessage: The Resource 'Microsoft.Network/privateEndpoints/sqlprivateendpoint' under resource group 'demo' was not
+found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+OperationID : ae4deac9-e69d-478d-afd3-ea3e0b6cccb0
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:88 char:1
++ New-AzPrivateDnsZoneGroup -ResourceGroupName $resourcegroup `
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsZoneGroup], NetworkCloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneGroupCommand
+
+
+
+^. {
+>> . {
+Set-Location "C:\GroupBy\Demo\Security"
+.\PrivateEndpoint-SQLDB.ps1 -vnetname demo-vnet`
+-PrivateEndpointname sqlprivateendpoint`
+-resourcegroup demo `
+-subnetname appnet `
+-sqlserver azaosqlserver `
+-AzureProfileFilePath C:\GroupBy\MyAzureProfile.json
+}
+Transcript started, output file is .\log\PrivateEndpoint-SQLDB.txt
+Get-AzSqlServer : The Resource 'Microsoft.Sql/servers/azaosqlserver' under resource group 'demo' was not found. For 
+more details please go to https://aka.ms/ARMResourceNotFoundFix
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:59 char:16
++ ... sqlserver = Get-AzSqlServer -ResourceGroupName $resourcegroup -Server ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzSqlServer], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Server.Cmdlet.GetAzureSqlServer
+Get-AzSqlServer : The Resource 'Microsoft.Sql/servers/azaosqlserver' under resource group 'demo' was not found. For
+more details please go to https://aka.ms/ARMResourceNotFoundFix
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:59 char:16
++ ... sqlserver = Get-AzSqlServer -ResourceGroupName $resourcegroup -Server ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzSqlServer], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Server.Cmdlet.GetAzureSqlServer
+
+^TerminatingError(New-AzPrivateLinkServiceConnection): "Cannot validate argument on parameter 'PrivateLinkServiceId'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+New-AzPrivateLinkServiceConnection : Cannot validate argument on parameter 'PrivateLinkServiceId'. The argument is null 
+or empty. Provide an argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:63 char:25
++   -PrivateLinkServiceId $azsqlserver.ResourceId `
++                         ~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateLinkServiceConnection], ParameterBindingValidationException
+    + FullyQualifiedErrorId : 
+ParameterArgumentValidationError,Microsoft.Azure.Commands.Network.NewAzurePrivateLinkServiceConnectionCommand
+New-AzPrivateLinkServiceConnection : Cannot validate argument on parameter 'PrivateLinkServiceId'. The argument is
+null or empty. Provide an argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:63 char:25
++   -PrivateLinkServiceId $azsqlserver.ResourceId `
++                         ~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateLinkServiceConnection], ParameterBindingValidationExcepti
+   on
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.Azure.Commands.Network.NewAzurePrivateLinkSer
+   viceConnectionCommand
+
+Get-AzVirtualNetwork : Unexpected character encountered while parsing value: <. Path '', line 0, position 0.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:66 char:9
++ $vnet = Get-AzVirtualNetwork -ResourceGroupName $resourcegroup -Name  ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzVirtualNetwork], JsonReaderException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Network.GetAzureVirtualNetworkCommand
+Get-AzVirtualNetwork : Unexpected character encountered while parsing value: <. Path '', line 0, position 0.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:66 char:9
++ $vnet = Get-AzVirtualNetwork -ResourceGroupName $resourcegroup -Name  ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzVirtualNetwork], JsonReaderException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Network.GetAzureVirtualNetworkCommand
+
+^TerminatingError(New-AzPrivateEndpoint): "Cannot validate argument on parameter 'Location'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+New-AzPrivateEndpoint : Cannot validate argument on parameter 'Location'. The argument is null or empty. Provide an 
+argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:74 char:13
++   -Location $vnet.Location `
++             ~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateEndpoint], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.Azure.Commands.Network.NewAzurePrivateEndpoint
+New-AzPrivateEndpoint : Cannot validate argument on parameter 'Location'. The argument is null or empty. Provide an
+argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:74 char:13
++   -Location $vnet.Location `
++             ~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateEndpoint], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.Azure.Commands.Network.NewAzurePrivateEndpoin
+   t
+
+New-AzPrivateDnsZone : Long running operation failed with status 'Failed'. Additional Info:'The Zone 
+privatelink.database.windows.net exists already and hence cannot be created again.'
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:78 char:12
++ $dnszone = New-AzPrivateDnsZone -ResourceGroupName $resourcegroup `
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsZone], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.PrivateDns.Zones.NewAzurePrivateDnsZone
+New-AzPrivateDnsZone : Long running operation failed with status 'Failed'. Additional Info:'The Zone
+privatelink.database.windows.net exists already and hence cannot be created again.'
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:78 char:12
++ $dnszone = New-AzPrivateDnsZone -ResourceGroupName $resourcegroup `
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsZone], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.PrivateDns.Zones.NewAzurePrivateDnsZone
+
+^TerminatingError(New-AzPrivateDnsVirtualNetworkLink): "Cannot validate argument on parameter 'VirtualNetworkId'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+New-AzPrivateDnsVirtualNetworkLink : Cannot validate argument on parameter 'VirtualNetworkId'. The argument is null or 
+empty. Provide an argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:84 char:21
++   -VirtualNetworkId $vnet.Id
++                     ~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsVirtualNetworkLink], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.Azure.Commands.PrivateDns.VirtualNetworkLinks.N
+ewAzurePrivateDnsVirtualNetworkLink
+New-AzPrivateDnsVirtualNetworkLink : Cannot validate argument on parameter 'VirtualNetworkId'. The argument is null or
+empty. Provide an argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:84 char:21
++   -VirtualNetworkId $vnet.Id
++                     ~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsVirtualNetworkLink], ParameterBindingValidationExcepti
+   on
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.Azure.Commands.PrivateDns.VirtualNetworkLinks
+   .NewAzurePrivateDnsVirtualNetworkLink
+
+>> TerminatingError(New-AzPrivateDnsZoneConfig): "Cannot validate argument on parameter 'PrivateDnsZoneId'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+New-AzPrivateDnsZoneConfig : Cannot validate argument on parameter 'PrivateDnsZoneId'. The argument is null or empty. 
+Provide an argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:86 char:97
++ ... ivatelink.database.windows.net" -PrivateDnsZoneId $dnszone.ResourceId
++                                                       ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneConfig], ParameterBindingValidationException
+    + FullyQualifiedErrorId : 
+ParameterArgumentValidationError,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneConfigCommand
+New-AzPrivateDnsZoneConfig : Cannot validate argument on parameter 'PrivateDnsZoneId'. The argument is null or empty.
+Provide an argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:86 char:97
++ ... ivatelink.database.windows.net" -PrivateDnsZoneId $dnszone.ResourceId
++                                                       ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneConfig], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZone
+   ConfigCommand
+
+>> TerminatingError(New-AzPrivateDnsZoneGroup): "Cannot bind argument to parameter 'PrivateDnsZoneConfig' because it is null."
+New-AzPrivateDnsZoneGroup : Cannot bind argument to parameter 'PrivateDnsZoneConfig' because it is null.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:89 char:87
++ ... rivateendpointname -name "dnszonegroup" -PrivateDnsZoneConfig $config
++                                                                   ~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneGroup], ParameterBindingValidationException
+    + FullyQualifiedErrorId : 
+ParameterArgumentValidationErrorNullNotAllowed,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneGroupCommand
+New-AzPrivateDnsZoneGroup : Cannot bind argument to parameter 'PrivateDnsZoneConfig' because it is null.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:89 char:87
++ ... rivateendpointname -name "dnszonegroup" -PrivateDnsZoneConfig $config
++                                                                   ~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneGroup], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.Azure.Commands.Network.NewAzure
+   PrivateDnsZoneGroupCommand
+
+^$global:?
+True
+**********************
+Windows PowerShell transcript end
+End time: 20201025062019
+**********************

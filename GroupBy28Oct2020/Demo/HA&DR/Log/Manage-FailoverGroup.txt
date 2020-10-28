@@ -1,0 +1,88 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20201028034035
+Username: appvm\aosama
+RunAs User: appvm\aosama
+Configuration Name: 
+Machine: appvm (Microsoft Windows NT 10.0.17763.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\GroupBy\Demo\HA&DR\Manage-FailoverGroup.ps1
+Process ID: 7356
+PSVersion: 5.1.17763.1007
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17763.1007
+BuildVersion: 10.0.17763.1007
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is .\Log\Manage-FailoverGroup.txt
+Provisioning Azure SQL Server aoazsqlsecondary
+
+
+ResourceGroupName        : demo
+ServerName               : aoazsqlsecondary
+Location                 : eastus2
+SqlAdministratorLogin    : aosama
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+Identity                 :
+FullyQualifiedDomainName : aoazsqlsecondary.database.windows.net
+ResourceId               : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Sql/servers/aoazsqlsecondary
+MinimalTlsVersion        :
+PublicNetworkAccess      : Enabled
+
+Creating the failover group aoazgroup
+ResourceGroupName                    : demo
+ServerName                           : aoazsqlserver
+FailoverGroupName                    : aoazgroup
+FailoverGroupReadWriteEndpoint       :
+FailoverGroupReadOnlyEndpoint        :
+PartnerServers                       : {/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Sql/servers/aoazsqlsecondary}
+PartnerResourceGroupName             : demo
+PartnerServerName                    : aoazsqlsecondary
+PartnerLocation                      : East US 2
+Databases                            : {}
+DatabaseNames                        : {}
+ReplicationRole                      : Primary
+ReplicationState                     : CATCH_UP
+ReadWriteFailoverPolicy              : Automatic
+FailoverWithDataLossGracePeriodHours : 1
+ReadOnlyFailoverPolicy               : Disabled
+Id                                   : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Sql/servers/aoazsqlserver/failoverGrou
+                                       ps/aoazgroup
+Location                             : East US
+Kind                                 :
+Tags                                 :
+
+Adding database aostackoverflow2010 to failover group aoazgroup
+ResourceGroupName                    : demo
+ServerName                           : aoazsqlserver
+FailoverGroupName                    : aoazgroup
+FailoverGroupReadWriteEndpoint       :
+FailoverGroupReadOnlyEndpoint        :
+PartnerServers                       : {/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Sql/servers/aoazsqlsecondary}
+PartnerResourceGroupName             : demo
+PartnerServerName                    : aoazsqlsecondary
+PartnerLocation                      : East US 2
+Databases                            : {/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Sql/servers/aoazsqlserver/databases/a
+                                       ostackoverflow2010}
+DatabaseNames                        : {aostackoverflow2010}
+ReplicationRole                      : Primary
+ReplicationState                     : CATCH_UP
+ReadWriteFailoverPolicy              : Automatic
+FailoverWithDataLossGracePeriodHours : 1
+ReadOnlyFailoverPolicy               : Disabled
+Id                                   : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Sql/servers/aoazsqlserver/failoverGrou
+                                       ps/aoazgroup
+Location                             : East US
+Kind                                 :
+Tags                                 :
+
+
+
+**********************
+Windows PowerShell transcript end
+End time: 20201028042954
+**********************

@@ -1,0 +1,7 @@
+DatabaseName	MetricType	MetricValue	PricePerMonth	RegionName	IsTierRecommended	ExclusionReasons	AppliedRules
+StackOverflow2010	DTU_STANDARD_TIER	S2	75.07	defaultregion	True		
+StackOverflow2010	DTU_PREMIUM_TIER	P2	930.00	defaultregion	False	This database is hosted on an HDD. It is more suited to the Standard/ General Purpose tiers.;This database appears to have very light traffic. It will be most cost-effective to host it on the Standard tier.	DbDriveType;S2OrLower
+StackOverflow2010	VCORE_GENERAL_PURPOSE	GP_GEN4_2	459.06	defaultregion	False	This database appears to have very light traffic. It will be most cost-effective to host it on the Standard tier.	S2OrLower
+StackOverflow2010	VCORE_GENERAL_PURPOSE_GEN5	GP_GEN5_4	916.99	defaultregion	False	This database appears to have very light traffic. It will be most cost-effective to host it on the Standard tier.	S2OrLower
+StackOverflow2010	VCORE_BUSINESS_CRITICAL	BC_GEN4_2	1187.40	defaultregion	False	This database is hosted on an HDD. It is more suited to the Standard/ General Purpose tiers.;This database appears to have very light traffic. It will be most cost-effective to host it on the Standard tier.	DbDriveType;S2OrLower
+StackOverflow2010	VCORE_BUSINESS_CRITICAL_GEN5	BC_GEN5_4	2372.52	defaultregion	False	This database is hosted on an HDD. It is more suited to the Standard/ General Purpose tiers.;This database appears to have very light traffic. It will be most cost-effective to host it on the Standard tier.	DbDriveType;S2OrLower

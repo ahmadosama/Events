@@ -1,0 +1,2051 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20201025061833
+Username: appvm\aosama
+RunAs User: appvm\aosama
+Configuration Name: 
+Machine: appvm (Microsoft Windows NT 10.0.17763.0)
+Host Application: powershell -noninteractive -noprofile -File -
+Process ID: 2996
+PSVersion: 5.1.17763.1007
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17763.1007
+BuildVersion: 10.0.17763.1007
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is .\log\PrivateEndpoint-SQLDB.txt
+Get-AzSqlServer : The Resource 'Microsoft.Sql/servers/azaosqlserver' under resource group 'demo' was not found. For 
+more details please go to https://aka.ms/ARMResourceNotFoundFix
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:59 char:16
++ ... sqlserver = Get-AzSqlServer -ResourceGroupName $resourcegroup -Server ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzSqlServer], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Server.Cmdlet.GetAzureSqlServer
+Get-AzSqlServer : The Resource 'Microsoft.Sql/servers/azaosqlserver' under resource group 'demo' was not found. For
+more details please go to https://aka.ms/ARMResourceNotFoundFix
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:59 char:16
++ ... sqlserver = Get-AzSqlServer -ResourceGroupName $resourcegroup -Server ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzSqlServer], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Server.Cmdlet.GetAzureSqlServer
+
+^TerminatingError(New-AzPrivateLinkServiceConnection): "Cannot validate argument on parameter 'PrivateLinkServiceId'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+New-AzPrivateLinkServiceConnection : Cannot validate argument on parameter 'PrivateLinkServiceId'. The argument is null 
+or empty. Provide an argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:63 char:25
++   -PrivateLinkServiceId $azsqlserver.ResourceId `
++                         ~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateLinkServiceConnection], ParameterBindingValidationException
+    + FullyQualifiedErrorId : 
+ParameterArgumentValidationError,Microsoft.Azure.Commands.Network.NewAzurePrivateLinkServiceConnectionCommand
+New-AzPrivateLinkServiceConnection : Cannot validate argument on parameter 'PrivateLinkServiceId'. The argument is
+null or empty. Provide an argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:63 char:25
++   -PrivateLinkServiceId $azsqlserver.ResourceId `
++                         ~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateLinkServiceConnection], ParameterBindingValidationExcepti
+   on
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.Azure.Commands.Network.NewAzurePrivateLinkSer
+   viceConnectionCommand
+
+^TerminatingError(New-AzPrivateEndpoint): "Cannot bind argument to parameter 'PrivateLinkServiceConnection' because it is null."
+New-AzPrivateEndpoint : Cannot bind argument to parameter 'PrivateLinkServiceConnection' because it is null.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:76 char:33
++   -PrivateLinkServiceConnection $pecon
++                                 ~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateEndpoint], ParameterBindingValidationException
+    + FullyQualifiedErrorId : 
+ParameterArgumentValidationErrorNullNotAllowed,Microsoft.Azure.Commands.Network.NewAzurePrivateEndpoint
+New-AzPrivateEndpoint : Cannot bind argument to parameter 'PrivateLinkServiceConnection' because it is null.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:76 char:33
++   -PrivateLinkServiceConnection $pecon
++                                 ~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateEndpoint], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.Azure.Commands.Network.NewAzure
+   PrivateEndpoint
+
+
+
+Name                    : vnetdnszonelink
+ResourceId              : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.N
+                          etwork/privateDnsZones/privatelink.database.windows.net/virtualNetworkLinks/vnetdnszonelink
+ResourceGroupName       : demo
+ZoneName                : privatelink.database.windows.net
+VirtualNetworkId        : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.N
+                          etwork/virtualNetworks/demo-vnet
+Location                :
+Etag                    : "6f00be72-0000-0100-0000-5f9518f30000"
+Tags                    :
+RegistrationEnabled     : False
+VirtualNetworkLinkState : Completed
+ProvisioningState       : Succeeded
+
+New-AzPrivateDnsZoneGroup : The Resource 'Microsoft.Network/privateEndpoints/sqlprivateendpoint' under resource group 
+'demo' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+StatusCode: 404
+ReasonPhrase: Not Found
+ErrorCode: ResourceNotFound
+ErrorMessage: The Resource 'Microsoft.Network/privateEndpoints/sqlprivateendpoint' under resource group 'demo' was not 
+found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+OperationID : ae4deac9-e69d-478d-afd3-ea3e0b6cccb0
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:88 char:1
++ New-AzPrivateDnsZoneGroup -ResourceGroupName $resourcegroup `
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsZoneGroup], NetworkCloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneGroupCommand
+New-AzPrivateDnsZoneGroup : The Resource 'Microsoft.Network/privateEndpoints/sqlprivateendpoint' under resource group
+'demo' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+StatusCode: 404
+ReasonPhrase: Not Found
+ErrorCode: ResourceNotFound
+ErrorMessage: The Resource 'Microsoft.Network/privateEndpoints/sqlprivateendpoint' under resource group 'demo' was not
+found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+OperationID : ae4deac9-e69d-478d-afd3-ea3e0b6cccb0
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:88 char:1
++ New-AzPrivateDnsZoneGroup -ResourceGroupName $resourcegroup `
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsZoneGroup], NetworkCloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneGroupCommand
+
+
+
+^. {
+>> . {
+Set-Location "C:\GroupBy\Demo\Security"
+.\PrivateEndpoint-SQLDB.ps1 -vnetname demo-vnet`
+-PrivateEndpointname sqlprivateendpoint`
+-resourcegroup demo `
+-subnetname appnet `
+-sqlserver azaosqlserver `
+-AzureProfileFilePath C:\GroupBy\MyAzureProfile.json
+}
+Transcript started, output file is .\log\PrivateEndpoint-SQLDB.txt
+Get-AzSqlServer : The Resource 'Microsoft.Sql/servers/azaosqlserver' under resource group 'demo' was not found. For 
+more details please go to https://aka.ms/ARMResourceNotFoundFix
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:59 char:16
++ ... sqlserver = Get-AzSqlServer -ResourceGroupName $resourcegroup -Server ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzSqlServer], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Server.Cmdlet.GetAzureSqlServer
+Get-AzSqlServer : The Resource 'Microsoft.Sql/servers/azaosqlserver' under resource group 'demo' was not found. For
+more details please go to https://aka.ms/ARMResourceNotFoundFix
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:59 char:16
++ ... sqlserver = Get-AzSqlServer -ResourceGroupName $resourcegroup -Server ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzSqlServer], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Server.Cmdlet.GetAzureSqlServer
+
+^TerminatingError(New-AzPrivateLinkServiceConnection): "Cannot validate argument on parameter 'PrivateLinkServiceId'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+New-AzPrivateLinkServiceConnection : Cannot validate argument on parameter 'PrivateLinkServiceId'. The argument is null 
+or empty. Provide an argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:63 char:25
++   -PrivateLinkServiceId $azsqlserver.ResourceId `
++                         ~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateLinkServiceConnection], ParameterBindingValidationException
+    + FullyQualifiedErrorId : 
+ParameterArgumentValidationError,Microsoft.Azure.Commands.Network.NewAzurePrivateLinkServiceConnectionCommand
+New-AzPrivateLinkServiceConnection : Cannot validate argument on parameter 'PrivateLinkServiceId'. The argument is
+null or empty. Provide an argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:63 char:25
++   -PrivateLinkServiceId $azsqlserver.ResourceId `
++                         ~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateLinkServiceConnection], ParameterBindingValidationExcepti
+   on
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.Azure.Commands.Network.NewAzurePrivateLinkSer
+   viceConnectionCommand
+
+Get-AzVirtualNetwork : Unexpected character encountered while parsing value: <. Path '', line 0, position 0.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:66 char:9
++ $vnet = Get-AzVirtualNetwork -ResourceGroupName $resourcegroup -Name  ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzVirtualNetwork], JsonReaderException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Network.GetAzureVirtualNetworkCommand
+Get-AzVirtualNetwork : Unexpected character encountered while parsing value: <. Path '', line 0, position 0.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:66 char:9
++ $vnet = Get-AzVirtualNetwork -ResourceGroupName $resourcegroup -Name  ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzVirtualNetwork], JsonReaderException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Network.GetAzureVirtualNetworkCommand
+
+^TerminatingError(New-AzPrivateEndpoint): "Cannot validate argument on parameter 'Location'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+New-AzPrivateEndpoint : Cannot validate argument on parameter 'Location'. The argument is null or empty. Provide an 
+argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:74 char:13
++   -Location $vnet.Location `
++             ~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateEndpoint], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.Azure.Commands.Network.NewAzurePrivateEndpoint
+New-AzPrivateEndpoint : Cannot validate argument on parameter 'Location'. The argument is null or empty. Provide an
+argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:74 char:13
++   -Location $vnet.Location `
++             ~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateEndpoint], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.Azure.Commands.Network.NewAzurePrivateEndpoin
+   t
+
+New-AzPrivateDnsZone : Long running operation failed with status 'Failed'. Additional Info:'The Zone 
+privatelink.database.windows.net exists already and hence cannot be created again.'
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:78 char:12
++ $dnszone = New-AzPrivateDnsZone -ResourceGroupName $resourcegroup `
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsZone], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.PrivateDns.Zones.NewAzurePrivateDnsZone
+New-AzPrivateDnsZone : Long running operation failed with status 'Failed'. Additional Info:'The Zone
+privatelink.database.windows.net exists already and hence cannot be created again.'
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:78 char:12
++ $dnszone = New-AzPrivateDnsZone -ResourceGroupName $resourcegroup `
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsZone], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.PrivateDns.Zones.NewAzurePrivateDnsZone
+
+^TerminatingError(New-AzPrivateDnsVirtualNetworkLink): "Cannot validate argument on parameter 'VirtualNetworkId'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+New-AzPrivateDnsVirtualNetworkLink : Cannot validate argument on parameter 'VirtualNetworkId'. The argument is null or 
+empty. Provide an argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:84 char:21
++   -VirtualNetworkId $vnet.Id
++                     ~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsVirtualNetworkLink], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.Azure.Commands.PrivateDns.VirtualNetworkLinks.N
+ewAzurePrivateDnsVirtualNetworkLink
+New-AzPrivateDnsVirtualNetworkLink : Cannot validate argument on parameter 'VirtualNetworkId'. The argument is null or
+empty. Provide an argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:84 char:21
++   -VirtualNetworkId $vnet.Id
++                     ~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsVirtualNetworkLink], ParameterBindingValidationExcepti
+   on
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.Azure.Commands.PrivateDns.VirtualNetworkLinks
+   .NewAzurePrivateDnsVirtualNetworkLink
+
+>> TerminatingError(New-AzPrivateDnsZoneConfig): "Cannot validate argument on parameter 'PrivateDnsZoneId'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+New-AzPrivateDnsZoneConfig : Cannot validate argument on parameter 'PrivateDnsZoneId'. The argument is null or empty. 
+Provide an argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:86 char:97
++ ... ivatelink.database.windows.net" -PrivateDnsZoneId $dnszone.ResourceId
++                                                       ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneConfig], ParameterBindingValidationException
+    + FullyQualifiedErrorId : 
+ParameterArgumentValidationError,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneConfigCommand
+New-AzPrivateDnsZoneConfig : Cannot validate argument on parameter 'PrivateDnsZoneId'. The argument is null or empty.
+Provide an argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:86 char:97
++ ... ivatelink.database.windows.net" -PrivateDnsZoneId $dnszone.ResourceId
++                                                       ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneConfig], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZone
+   ConfigCommand
+
+>> TerminatingError(New-AzPrivateDnsZoneGroup): "Cannot bind argument to parameter 'PrivateDnsZoneConfig' because it is null."
+New-AzPrivateDnsZoneGroup : Cannot bind argument to parameter 'PrivateDnsZoneConfig' because it is null.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:89 char:87
++ ... rivateendpointname -name "dnszonegroup" -PrivateDnsZoneConfig $config
++                                                                   ~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneGroup], ParameterBindingValidationException
+    + FullyQualifiedErrorId : 
+ParameterArgumentValidationErrorNullNotAllowed,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneGroupCommand
+New-AzPrivateDnsZoneGroup : Cannot bind argument to parameter 'PrivateDnsZoneConfig' because it is null.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:89 char:87
++ ... rivateendpointname -name "dnszonegroup" -PrivateDnsZoneConfig $config
++                                                                   ~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneGroup], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.Azure.Commands.Network.NewAzure
+   PrivateDnsZoneGroupCommand
+
+^$global:?
+True
+**********************
+Windows PowerShell transcript end
+End time: 20201025062018
+**********************
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20201025061917
+Username: appvm\aosama
+RunAs User: appvm\aosama
+Configuration Name: 
+Machine: appvm (Microsoft Windows NT 10.0.17763.0)
+Host Application: powershell -noninteractive -noprofile -File -
+Process ID: 2704
+PSVersion: 5.1.17763.1007
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17763.1007
+BuildVersion: 10.0.17763.1007
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is .\log\PrivateEndpoint-SQLDB.txt
+Get-AzSqlServer : The Resource 'Microsoft.Sql/servers/azaosqlserver' under resource group 'demo' was not found. For 
+more details please go to https://aka.ms/ARMResourceNotFoundFix
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:59 char:16
++ ... sqlserver = Get-AzSqlServer -ResourceGroupName $resourcegroup -Server ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzSqlServer], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Server.Cmdlet.GetAzureSqlServer
+Get-AzSqlServer : The Resource 'Microsoft.Sql/servers/azaosqlserver' under resource group 'demo' was not found. For
+more details please go to https://aka.ms/ARMResourceNotFoundFix
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:59 char:16
++ ... sqlserver = Get-AzSqlServer -ResourceGroupName $resourcegroup -Server ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzSqlServer], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Server.Cmdlet.GetAzureSqlServer
+
+PS>TerminatingError(New-AzPrivateLinkServiceConnection): "Cannot validate argument on parameter 'PrivateLinkServiceId'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+New-AzPrivateLinkServiceConnection : Cannot validate argument on parameter 'PrivateLinkServiceId'. The argument is null 
+or empty. Provide an argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:63 char:25
++   -PrivateLinkServiceId $azsqlserver.ResourceId `
++                         ~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateLinkServiceConnection], ParameterBindingValidationException
+    + FullyQualifiedErrorId : 
+ParameterArgumentValidationError,Microsoft.Azure.Commands.Network.NewAzurePrivateLinkServiceConnectionCommand
+New-AzPrivateLinkServiceConnection : Cannot validate argument on parameter 'PrivateLinkServiceId'. The argument is
+null or empty. Provide an argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:63 char:25
++   -PrivateLinkServiceId $azsqlserver.ResourceId `
++                         ~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateLinkServiceConnection], ParameterBindingValidationExcepti
+   on
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.Azure.Commands.Network.NewAzurePrivateLinkSer
+   viceConnectionCommand
+
+PS>TerminatingError(New-AzPrivateEndpoint): "Cannot bind argument to parameter 'PrivateLinkServiceConnection' because it is null."
+New-AzPrivateEndpoint : Cannot bind argument to parameter 'PrivateLinkServiceConnection' because it is null.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:76 char:33
++   -PrivateLinkServiceConnection $pecon
++                                 ~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateEndpoint], ParameterBindingValidationException
+    + FullyQualifiedErrorId : 
+ParameterArgumentValidationErrorNullNotAllowed,Microsoft.Azure.Commands.Network.NewAzurePrivateEndpoint
+New-AzPrivateEndpoint : Cannot bind argument to parameter 'PrivateLinkServiceConnection' because it is null.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:76 char:33
++   -PrivateLinkServiceConnection $pecon
++                                 ~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateEndpoint], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.Azure.Commands.Network.NewAzure
+   PrivateEndpoint
+
+New-AzPrivateDnsZone : Long running operation failed with status 'Failed'. Additional Info:'The Zone 
+privatelink.database.windows.net exists already and hence cannot be created again.'
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:78 char:12
++ $dnszone = New-AzPrivateDnsZone -ResourceGroupName $resourcegroup `
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsZone], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.PrivateDns.Zones.NewAzurePrivateDnsZone
+New-AzPrivateDnsZone : Long running operation failed with status 'Failed'. Additional Info:'The Zone
+privatelink.database.windows.net exists already and hence cannot be created again.'
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:78 char:12
++ $dnszone = New-AzPrivateDnsZone -ResourceGroupName $resourcegroup `
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsZone], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.PrivateDns.Zones.NewAzurePrivateDnsZone
+
+New-AzPrivateDnsVirtualNetworkLink : Long running operation failed with status 'Failed'. Additional Info:'The Virtual 
+Network link vnetdnszonelink for the Private DNS zone privatelink.database.windows.net exists already and hence cannot 
+be created again.'
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:81 char:1
++ New-AzPrivateDnsVirtualNetworkLink -ResourceGroupName $resourcegroup  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsVirtualNetworkLink], CloudException
+    + FullyQualifiedErrorId : 
+Microsoft.Azure.Commands.PrivateDns.VirtualNetworkLinks.NewAzurePrivateDnsVirtualNetworkLink
+New-AzPrivateDnsVirtualNetworkLink : Long running operation failed with status 'Failed'. Additional Info:'The Virtual
+Network link vnetdnszonelink for the Private DNS zone privatelink.database.windows.net exists already and hence cannot
+be created again.'
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:81 char:1
++ New-AzPrivateDnsVirtualNetworkLink -ResourceGroupName $resourcegroup  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsVirtualNetworkLink], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.PrivateDns.VirtualNetworkLinks.NewAzurePrivateDnsVirtualNetwork
+   Link
+
+PS>TerminatingError(New-AzPrivateDnsZoneConfig): "Cannot validate argument on parameter 'PrivateDnsZoneId'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+New-AzPrivateDnsZoneConfig : Cannot validate argument on parameter 'PrivateDnsZoneId'. The argument is null or empty. 
+Provide an argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:86 char:97
++ ... ivatelink.database.windows.net" -PrivateDnsZoneId $dnszone.ResourceId
++                                                       ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneConfig], ParameterBindingValidationException
+    + FullyQualifiedErrorId : 
+ParameterArgumentValidationError,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneConfigCommand
+New-AzPrivateDnsZoneConfig : Cannot validate argument on parameter 'PrivateDnsZoneId'. The argument is null or empty.
+Provide an argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:86 char:97
++ ... ivatelink.database.windows.net" -PrivateDnsZoneId $dnszone.ResourceId
++                                                       ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneConfig], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZone
+   ConfigCommand
+
+>> TerminatingError(New-AzPrivateDnsZoneGroup): "Cannot bind argument to parameter 'PrivateDnsZoneConfig' because it is null."
+New-AzPrivateDnsZoneGroup : Cannot bind argument to parameter 'PrivateDnsZoneConfig' because it is null.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:89 char:87
++ ... rivateendpointname -name "dnszonegroup" -PrivateDnsZoneConfig $config
++                                                                   ~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneGroup], ParameterBindingValidationException
+    + FullyQualifiedErrorId : 
+ParameterArgumentValidationErrorNullNotAllowed,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneGroupCommand
+New-AzPrivateDnsZoneGroup : Cannot bind argument to parameter 'PrivateDnsZoneConfig' because it is null.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:89 char:87
++ ... rivateendpointname -name "dnszonegroup" -PrivateDnsZoneConfig $config
++                                                                   ~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneGroup], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.Azure.Commands.Network.NewAzure
+   PrivateDnsZoneGroupCommand
+
+^$global:?
+True
+**********************
+Windows PowerShell transcript end
+End time: 20201025062027
+**********************
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20201025062012
+Username: appvm\aosama
+RunAs User: appvm\aosama
+Configuration Name: 
+Machine: appvm (Microsoft Windows NT 10.0.17763.0)
+Host Application: powershell -noninteractive -noprofile -File -
+Process ID: 6776
+PSVersion: 5.1.17763.1007
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17763.1007
+BuildVersion: 10.0.17763.1007
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is .\log\PrivateEndpoint-SQLDB.txt
+New-AzPrivateEndpoint : Unexpected character encountered while parsing value: <. Path '', line 0, position 0.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:72 char:1
++ New-AzPrivateEndpoint -ResourceGroupName $resourcegroup `
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateEndpoint], JsonReaderException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Network.NewAzurePrivateEndpoint
+New-AzPrivateEndpoint : Unexpected character encountered while parsing value: <. Path '', line 0, position 0.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:72 char:1
++ New-AzPrivateEndpoint -ResourceGroupName $resourcegroup `
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateEndpoint], JsonReaderException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Network.NewAzurePrivateEndpoint
+
+New-AzPrivateDnsZone : Long running operation failed with status 'Failed'. Additional Info:'The Zone 
+privatelink.database.windows.net exists already and hence cannot be created again.'
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:78 char:12
++ $dnszone = New-AzPrivateDnsZone -ResourceGroupName $resourcegroup `
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsZone], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.PrivateDns.Zones.NewAzurePrivateDnsZone
+New-AzPrivateDnsZone : Long running operation failed with status 'Failed'. Additional Info:'The Zone
+privatelink.database.windows.net exists already and hence cannot be created again.'
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:78 char:12
++ $dnszone = New-AzPrivateDnsZone -ResourceGroupName $resourcegroup `
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsZone], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.PrivateDns.Zones.NewAzurePrivateDnsZone
+
+New-AzPrivateDnsVirtualNetworkLink : Long running operation failed with status 'Failed'. Additional Info:'The Virtual 
+Network link vnetdnszonelink for the Private DNS zone privatelink.database.windows.net exists already and hence cannot 
+be created again.'
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:81 char:1
++ New-AzPrivateDnsVirtualNetworkLink -ResourceGroupName $resourcegroup  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsVirtualNetworkLink], CloudException
+    + FullyQualifiedErrorId : 
+Microsoft.Azure.Commands.PrivateDns.VirtualNetworkLinks.NewAzurePrivateDnsVirtualNetworkLink
+New-AzPrivateDnsVirtualNetworkLink : Long running operation failed with status 'Failed'. Additional Info:'The Virtual
+Network link vnetdnszonelink for the Private DNS zone privatelink.database.windows.net exists already and hence cannot
+be created again.'
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:81 char:1
++ New-AzPrivateDnsVirtualNetworkLink -ResourceGroupName $resourcegroup  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsVirtualNetworkLink], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.PrivateDns.VirtualNetworkLinks.NewAzurePrivateDnsVirtualNetwork
+   Link
+
+PS>TerminatingError(New-AzPrivateDnsZoneConfig): "Cannot validate argument on parameter 'PrivateDnsZoneId'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+New-AzPrivateDnsZoneConfig : Cannot validate argument on parameter 'PrivateDnsZoneId'. The argument is null or empty. 
+Provide an argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:86 char:97
++ ... ivatelink.database.windows.net" -PrivateDnsZoneId $dnszone.ResourceId
++                                                       ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneConfig], ParameterBindingValidationException
+    + FullyQualifiedErrorId : 
+ParameterArgumentValidationError,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneConfigCommand
+New-AzPrivateDnsZoneConfig : Cannot validate argument on parameter 'PrivateDnsZoneId'. The argument is null or empty.
+Provide an argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:86 char:97
++ ... ivatelink.database.windows.net" -PrivateDnsZoneId $dnszone.ResourceId
++                                                       ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneConfig], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZone
+   ConfigCommand
+
+>> TerminatingError(New-AzPrivateDnsZoneGroup): "Cannot bind argument to parameter 'PrivateDnsZoneConfig' because it is null."
+New-AzPrivateDnsZoneGroup : Cannot bind argument to parameter 'PrivateDnsZoneConfig' because it is null.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:89 char:87
++ ... rivateendpointname -name "dnszonegroup" -PrivateDnsZoneConfig $config
++                                                                   ~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneGroup], ParameterBindingValidationException
+    + FullyQualifiedErrorId : 
+ParameterArgumentValidationErrorNullNotAllowed,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneGroupCommand
+New-AzPrivateDnsZoneGroup : Cannot bind argument to parameter 'PrivateDnsZoneConfig' because it is null.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:89 char:87
++ ... rivateendpointname -name "dnszonegroup" -PrivateDnsZoneConfig $config
++                                                                   ~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneGroup], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.Azure.Commands.Network.NewAzure
+   PrivateDnsZoneGroupCommand
+
+^. {
+>> . {
+Set-Location "C:\GroupBy\Demo\Security"
+.\PrivateEndpoint-SQLDB.ps1 -vnetname demo-vnet `
+-PrivateEndpointname sqlprivateendpoint`
+-resourcegroup demo `
+-subnetname appnet `
+-sqlserver aoazsqlserver `
+-AzureProfileFilePath C:\GroupBy\MyAzureProfile.json
+}
+Transcript started, output file is .\log\PrivateEndpoint-SQLDB.txt
+New-AzPrivateEndpoint : Unexpected character encountered while parsing value: <. Path '', line 0, position 0.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:72 char:1
++ New-AzPrivateEndpoint -ResourceGroupName $resourcegroup `
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateEndpoint], JsonReaderException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Network.NewAzurePrivateEndpoint
+New-AzPrivateEndpoint : Unexpected character encountered while parsing value: <. Path '', line 0, position 0.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:72 char:1
++ New-AzPrivateEndpoint -ResourceGroupName $resourcegroup `
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateEndpoint], JsonReaderException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Network.NewAzurePrivateEndpoint
+
+New-AzPrivateDnsZone : Long running operation failed with status 'Failed'. Additional Info:'The Zone 
+privatelink.database.windows.net exists already and hence cannot be created again.'
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:78 char:12
++ $dnszone = New-AzPrivateDnsZone -ResourceGroupName $resourcegroup `
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsZone], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.PrivateDns.Zones.NewAzurePrivateDnsZone
+New-AzPrivateDnsZone : Long running operation failed with status 'Failed'. Additional Info:'The Zone
+privatelink.database.windows.net exists already and hence cannot be created again.'
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:78 char:12
++ $dnszone = New-AzPrivateDnsZone -ResourceGroupName $resourcegroup `
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsZone], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.PrivateDns.Zones.NewAzurePrivateDnsZone
+
+New-AzPrivateDnsVirtualNetworkLink : Long running operation failed with status 'Failed'. Additional Info:'The Virtual 
+Network link vnetdnszonelink for the Private DNS zone privatelink.database.windows.net exists already and hence cannot 
+be created again.'
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:81 char:1
++ New-AzPrivateDnsVirtualNetworkLink -ResourceGroupName $resourcegroup  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsVirtualNetworkLink], CloudException
+    + FullyQualifiedErrorId : 
+Microsoft.Azure.Commands.PrivateDns.VirtualNetworkLinks.NewAzurePrivateDnsVirtualNetworkLink
+New-AzPrivateDnsVirtualNetworkLink : Long running operation failed with status 'Failed'. Additional Info:'The Virtual
+Network link vnetdnszonelink for the Private DNS zone privatelink.database.windows.net exists already and hence cannot
+be created again.'
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:81 char:1
++ New-AzPrivateDnsVirtualNetworkLink -ResourceGroupName $resourcegroup  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsVirtualNetworkLink], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.PrivateDns.VirtualNetworkLinks.NewAzurePrivateDnsVirtualNetwork
+   Link
+
+^TerminatingError(New-AzPrivateDnsZoneConfig): "Cannot validate argument on parameter 'PrivateDnsZoneId'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+New-AzPrivateDnsZoneConfig : Cannot validate argument on parameter 'PrivateDnsZoneId'. The argument is null or empty. 
+Provide an argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:86 char:97
++ ... ivatelink.database.windows.net" -PrivateDnsZoneId $dnszone.ResourceId
++                                                       ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneConfig], ParameterBindingValidationException
+    + FullyQualifiedErrorId : 
+ParameterArgumentValidationError,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneConfigCommand
+New-AzPrivateDnsZoneConfig : Cannot validate argument on parameter 'PrivateDnsZoneId'. The argument is null or empty.
+Provide an argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:86 char:97
++ ... ivatelink.database.windows.net" -PrivateDnsZoneId $dnszone.ResourceId
++                                                       ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneConfig], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZone
+   ConfigCommand
+
+>> TerminatingError(New-AzPrivateDnsZoneGroup): "Cannot bind argument to parameter 'PrivateDnsZoneConfig' because it is null."
+New-AzPrivateDnsZoneGroup : Cannot bind argument to parameter 'PrivateDnsZoneConfig' because it is null.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:89 char:87
++ ... rivateendpointname -name "dnszonegroup" -PrivateDnsZoneConfig $config
++                                                                   ~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneGroup], ParameterBindingValidationException
+    + FullyQualifiedErrorId : 
+ParameterArgumentValidationErrorNullNotAllowed,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneGroupCommand
+New-AzPrivateDnsZoneGroup : Cannot bind argument to parameter 'PrivateDnsZoneConfig' because it is null.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:89 char:87
++ ... rivateendpointname -name "dnszonegroup" -PrivateDnsZoneConfig $config
++                                                                   ~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneGroup], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.Azure.Commands.Network.NewAzure
+   PrivateDnsZoneGroupCommand
+
+^$global:?
+True
+**********************
+Windows PowerShell transcript end
+End time: 20201025062230
+**********************
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20201025062145
+Username: appvm\aosama
+RunAs User: appvm\aosama
+Configuration Name: 
+Machine: appvm (Microsoft Windows NT 10.0.17763.0)
+Host Application: powershell -noninteractive -noprofile -File -
+Process ID: 4292
+PSVersion: 5.1.17763.1007
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17763.1007
+BuildVersion: 10.0.17763.1007
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is .\log\PrivateEndpoint-SQLDB.txt
+New-AzPrivateEndpoint : Operation returned an invalid status code 'BadRequest'
+StatusCode: 400
+ReasonPhrase: Bad Request
+ErrorCode: PrivateEndpointCannotBeCreatedInSubnetThatHasNetworkPoliciesEnabled
+ErrorMessage: Private endpoint /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microso
+ft.Network/privateEndpoints/sqlprivateendpoint cannot be created in a subnet /subscriptions/b85b0984-a391-4f22-a832-fb6e
+46c39f38/resourceGroups/demo/providers/Microsoft.Network/virtualNetworks/demo-vnet/subnets/appnet since it has private 
+endpoint network policies enabled.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:72 char:1
++ New-AzPrivateEndpoint -ResourceGroupName $resourcegroup `
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateEndpoint], NetworkCloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Network.NewAzurePrivateEndpoint
+New-AzPrivateEndpoint : Operation returned an invalid status code 'BadRequest'
+StatusCode: 400
+ReasonPhrase: Bad Request
+ErrorCode: PrivateEndpointCannotBeCreatedInSubnetThatHasNetworkPoliciesEnabled
+ErrorMessage: Private endpoint /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Micros
+oft.Network/privateEndpoints/sqlprivateendpoint cannot be created in a subnet /subscriptions/b85b0984-a391-4f22-a832-fb
+6e46c39f38/resourceGroups/demo/providers/Microsoft.Network/virtualNetworks/demo-vnet/subnets/appnet since it has
+private endpoint network policies enabled.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:72 char:1
++ New-AzPrivateEndpoint -ResourceGroupName $resourcegroup `
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateEndpoint], NetworkCloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Network.NewAzurePrivateEndpoint
+
+New-AzPrivateDnsZone : Long running operation failed with status 'Failed'. Additional Info:'The Zone 
+privatelink.database.windows.net exists already and hence cannot be created again.'
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:78 char:12
++ $dnszone = New-AzPrivateDnsZone -ResourceGroupName $resourcegroup `
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsZone], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.PrivateDns.Zones.NewAzurePrivateDnsZone
+New-AzPrivateDnsZone : Long running operation failed with status 'Failed'. Additional Info:'The Zone
+privatelink.database.windows.net exists already and hence cannot be created again.'
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:78 char:12
++ $dnszone = New-AzPrivateDnsZone -ResourceGroupName $resourcegroup `
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsZone], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.PrivateDns.Zones.NewAzurePrivateDnsZone
+
+New-AzPrivateDnsVirtualNetworkLink : Long running operation failed with status 'Failed'. Additional Info:'The Virtual 
+Network link vnetdnszonelink for the Private DNS zone privatelink.database.windows.net exists already and hence cannot 
+be created again.'
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:81 char:1
++ New-AzPrivateDnsVirtualNetworkLink -ResourceGroupName $resourcegroup  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsVirtualNetworkLink], CloudException
+    + FullyQualifiedErrorId : 
+Microsoft.Azure.Commands.PrivateDns.VirtualNetworkLinks.NewAzurePrivateDnsVirtualNetworkLink
+New-AzPrivateDnsVirtualNetworkLink : Long running operation failed with status 'Failed'. Additional Info:'The Virtual
+Network link vnetdnszonelink for the Private DNS zone privatelink.database.windows.net exists already and hence cannot
+be created again.'
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:81 char:1
++ New-AzPrivateDnsVirtualNetworkLink -ResourceGroupName $resourcegroup  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsVirtualNetworkLink], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.PrivateDns.VirtualNetworkLinks.NewAzurePrivateDnsVirtualNetwork
+   Link
+
+PS>TerminatingError(New-AzPrivateDnsZoneConfig): "Cannot validate argument on parameter 'PrivateDnsZoneId'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+New-AzPrivateDnsZoneConfig : Cannot validate argument on parameter 'PrivateDnsZoneId'. The argument is null or empty. 
+Provide an argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:86 char:97
++ ... ivatelink.database.windows.net" -PrivateDnsZoneId $dnszone.ResourceId
++                                                       ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneConfig], ParameterBindingValidationException
+    + FullyQualifiedErrorId : 
+ParameterArgumentValidationError,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneConfigCommand
+New-AzPrivateDnsZoneConfig : Cannot validate argument on parameter 'PrivateDnsZoneId'. The argument is null or empty.
+Provide an argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:86 char:97
++ ... ivatelink.database.windows.net" -PrivateDnsZoneId $dnszone.ResourceId
++                                                       ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneConfig], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZone
+   ConfigCommand
+
+>> TerminatingError(New-AzPrivateDnsZoneGroup): "Cannot bind argument to parameter 'PrivateDnsZoneConfig' because it is null."
+New-AzPrivateDnsZoneGroup : Cannot bind argument to parameter 'PrivateDnsZoneConfig' because it is null.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:89 char:87
++ ... rivateendpointname -name "dnszonegroup" -PrivateDnsZoneConfig $config
++                                                                   ~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneGroup], ParameterBindingValidationException
+    + FullyQualifiedErrorId : 
+ParameterArgumentValidationErrorNullNotAllowed,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneGroupCommand
+New-AzPrivateDnsZoneGroup : Cannot bind argument to parameter 'PrivateDnsZoneConfig' because it is null.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:89 char:87
++ ... rivateendpointname -name "dnszonegroup" -PrivateDnsZoneConfig $config
++                                                                   ~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneGroup], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.Azure.Commands.Network.NewAzure
+   PrivateDnsZoneGroupCommand
+
+^. {
+>> . {
+Set-Location "C:\GroupBy\Demo\Security"
+.\PrivateEndpoint-SQLDB.ps1 -vnetname demo-vnet `
+-PrivateEndpointname sqlprivateendpoint `
+-resourcegroup demo `
+-subnetname appnet `
+-sqlserver aoazsqlserver `
+-AzureProfileFilePath C:\GroupBy\MyAzureProfile.json
+}
+Transcript started, output file is .\log\PrivateEndpoint-SQLDB.txt
+
+
+Name                                : sqlprivateendpoint
+Type                                : Microsoft.Network/privateEndpoints
+Location                            : eastus
+ResourceGroupName                   : demo
+ProvisioningState                   : Succeeded
+Etag                                : W/"e34bfd1d-e11d-4938-bd35-af4c35cfd4d6"
+Id                                  : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers
+                                      /Microsoft.Network/privateEndpoints/sqlprivateendpoint
+Subnet                              : {
+                                        "Id": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/
+                                      providers/Microsoft.Network/virtualNetworks/demo-vnet/subnets/appnet",
+                                        "IpAllocations": []
+                                      }
+NetworkInterfaces                   : [
+                                        {
+                                          "Id": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/dem
+                                      o/providers/Microsoft.Network/networkInterfaces/sqlprivateendpoint.nic.6412beb8-3
+                                      74b-45c0-8239-8b50f4d254f8"
+                                        }
+                                      ]
+PrivateLinkServiceConnections       : [
+                                        {
+                                          "ProvisioningState": "Succeeded",
+                                          "PrivateLinkServiceId": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/
+                                      resourceGroups/demo/providers/Microsoft.Sql/servers/aoazsqlserver",
+                                          "GroupIds": [
+                                            "sqlServer"
+                                          ],
+                                          "PrivateLinkServiceConnectionState": {
+                                            "Status": "Approved",
+                                            "Description": "Auto-approved",
+                                            "ActionRequired": "None"
+                                          },
+                                          "Name": "sqlprivateendpoint_connection",
+                                          "Etag": "W/\"e34bfd1d-e11d-4938-bd35-af4c35cfd4d6\"",
+                                          "Id": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/dem
+                                      o/providers/Microsoft.Network/privateEndpoints/sqlprivateendpoint/privateLinkServ
+                                      iceConnections/sqlprivateendpoint_connection"
+                                        }
+                                      ]
+ManualPrivateLinkServiceConnections : []
+CustomDnsConfigs                    : [
+                                        {
+                                          "Fqdn": "aoazsqlserver.database.windows.net",
+                                          "IpAddresses": [
+                                            "10.0.3.5"
+                                          ]
+                                        }
+                                      ]
+
+-Force : The term '-Force' is not recognized as the name of a cmdlet, function, script file, or operable program. Check 
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:77 char:3
++   -Force
++   ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-Force:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+-Force : The term '-Force' is not recognized as the name of a cmdlet, function, script file, or operable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:77 char:3
++   -Force
++   ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-Force:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+
+Name                    : vnetdnszonelink
+ResourceId              : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.N
+                          etwork/privateDnsZones/privatelink.database.windows.net/virtualNetworkLinks/vnetdnszonelink
+ResourceGroupName       : demo
+ZoneName                : privatelink.database.windows.net
+VirtualNetworkId        : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.N
+                          etwork/virtualNetworks/demo-vnet
+Location                :
+Etag                    : "70003902-0000-0100-0000-5f951ecf0000"
+Tags                    :
+RegistrationEnabled     : False
+VirtualNetworkLinkState : Completed
+ProvisioningState       : Succeeded
+
+
+ProvisioningState         : Succeeded
+PrivateDnsZoneConfigs     : {privatelink.database.windows.net}
+PrivateDnsZoneConfigsText : [
+                              {
+                                "Name": "privatelink.database.windows.net",
+                                "PrivateDnsZoneId": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups
+                            /demo/providers/Microsoft.Network/privateDnsZones/privatelink.database.windows.net",
+                                "RecordSets": [
+                                  {
+                                    "RecordType": "A",
+                                    "RecordSetName": "aoazsqlserver",
+                                    "Fqdn": "aoazsqlserver.privatelink.database.windows.net",
+                                    "ProvisioningState": "Succeeded",
+                                    "Ttl": 10,
+                                    "IpAddresses": [
+                                      "10.0.3.5"
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+Name                      : dnszonegroup
+Etag                      : W/"a8cfdd24-2362-44dc-902b-8f7a386f1957"
+Id                        : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft
+                            .Network/privateEndpoints/sqlprivateendpoint/privateDnsZoneGroups/dnszonegroup
+
+
+
+^$global:?
+True
+**********************
+Windows PowerShell transcript end
+End time: 20201025064505
+**********************
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20201025064445
+Username: appvm\aosama
+RunAs User: appvm\aosama
+Configuration Name: 
+Machine: appvm (Microsoft Windows NT 10.0.17763.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\GroupBy\Demo\Security\ServiceEndpoint-SQLDB.ps1
+Process ID: 4756
+PSVersion: 5.1.17763.1007
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17763.1007
+BuildVersion: 10.0.17763.1007
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is .\log\PrivateEndpoint-SQLDB.txt
+
+
+Name                                : mysqlep
+Type                                : Microsoft.Network/privateEndpoints
+Location                            : eastus
+ResourceGroupName                   : demo
+ProvisioningState                   : Succeeded
+Etag                                : W/"00a4df50-131d-4bcf-87a1-5fac119e3ec8"
+Id                                  : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Network/privateEndpoints/mysqlep
+Subnet                              : {
+                                        "Id": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Network/virtualNetworks/demo-v
+                                      net/subnets/appnet",
+                                        "IpAllocations": []
+                                      }
+NetworkInterfaces                   : [
+                                        {
+                                          "Id": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Network/networkInterfaces/my
+                                      sqlep.nic.99b3c3c4-27cd-4284-a741-cf8b54c67666"
+                                        }
+                                      ]
+PrivateLinkServiceConnections       : [
+                                        {
+                                          "ProvisioningState": "Succeeded",
+                                          "PrivateLinkServiceId":
+                                      "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Sql/servers/aoazsqlserver",
+                                          "GroupIds": [
+                                            "sqlServer"
+                                          ],
+                                          "PrivateLinkServiceConnectionState": {
+                                            "Status": "Approved",
+                                            "Description": "Auto-approved",
+                                            "ActionRequired": "None"
+                                          },
+                                          "Name": "mysqlep_connection",
+                                          "Etag": "W/\"00a4df50-131d-4bcf-87a1-5fac119e3ec8\"",
+                                          "Id": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Network/privateEndpoints/mys
+                                      qlep/privateLinkServiceConnections/mysqlep_connection"
+                                        }
+                                      ]
+ManualPrivateLinkServiceConnections : []
+CustomDnsConfigs                    : [
+                                        {
+                                          "Fqdn": "aoazsqlserver.database.windows.net",
+                                          "IpAddresses": [
+                                            "10.0.3.6"
+                                          ]
+                                        }
+                                      ]
+
+New-AzPrivateDnsZone : Long running operation failed with status 'Failed'. Additional Info:'The Zone 
+privatelink.database.windows.net exists already and hence cannot be created again.'
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:80 char:12
++ $dnszone = New-AzPrivateDnsZone -ResourceGroupName $resourcegroup `
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsZone], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.PrivateDns.Zones.NewAzurePrivateDnsZone
+New-AzPrivateDnsZone : Long running operation failed with status 'Failed'. Additional Info:'The Zone privatelink.database.windows.net exists already and hence cannot be
+created again.'
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:80 char:12
++ $dnszone = New-AzPrivateDnsZone -ResourceGroupName $resourcegroup `
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsZone], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.PrivateDns.Zones.NewAzurePrivateDnsZone
+
+New-AzPrivateDnsVirtualNetworkLink : Long running operation failed with status 'Failed'. Additional Info:'The Virtual 
+Network link vnetdnszonelink for the Private DNS zone privatelink.database.windows.net exists already and hence cannot 
+be created again.'
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:83 char:1
++ New-AzPrivateDnsVirtualNetworkLink -ResourceGroupName $resourcegroup  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsVirtualNetworkLink], CloudException
+    + FullyQualifiedErrorId : 
+Microsoft.Azure.Commands.PrivateDns.VirtualNetworkLinks.NewAzurePrivateDnsVirtualNetworkLink
+New-AzPrivateDnsVirtualNetworkLink : Long running operation failed with status 'Failed'. Additional Info:'The Virtual Network link vnetdnszonelink for the Private DNS
+zone privatelink.database.windows.net exists already and hence cannot be created again.'
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:83 char:1
++ New-AzPrivateDnsVirtualNetworkLink -ResourceGroupName $resourcegroup  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsVirtualNetworkLink], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.PrivateDns.VirtualNetworkLinks.NewAzurePrivateDnsVirtualNetworkLink
+
+PS C:\GroupBy\Demo\Security> TerminatingError(New-AzPrivateDnsZoneConfig): "Cannot validate argument on parameter 'PrivateDnsZoneId'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+New-AzPrivateDnsZoneConfig : Cannot validate argument on parameter 'PrivateDnsZoneId'. The argument is null or empty. 
+Provide an argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:88 char:97
++ ... ivatelink.database.windows.net" -PrivateDnsZoneId $dnszone.ResourceId
++                                                       ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneConfig], ParameterBindingValidationException
+    + FullyQualifiedErrorId : 
+ParameterArgumentValidationError,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneConfigCommand
+New-AzPrivateDnsZoneConfig : Cannot validate argument on parameter 'PrivateDnsZoneId'. The argument is null or empty. Provide an argument that is not null or empty, and
+then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:88 char:97
++ ... ivatelink.database.windows.net" -PrivateDnsZoneId $dnszone.ResourceId
++                                                       ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneConfig], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneConfigCommand
+
+>> TerminatingError(New-AzPrivateDnsZoneGroup): "Cannot bind argument to parameter 'PrivateDnsZoneConfig' because it is null."
+New-AzPrivateDnsZoneGroup : Cannot bind argument to parameter 'PrivateDnsZoneConfig' because it is null.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:91 char:87
++ ... rivateendpointname -name "dnszonegroup" -PrivateDnsZoneConfig $config
++                                                                   ~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneGroup], ParameterBindingValidationException
+    + FullyQualifiedErrorId : 
+ParameterArgumentValidationErrorNullNotAllowed,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneGroupCommand
+New-AzPrivateDnsZoneGroup : Cannot bind argument to parameter 'PrivateDnsZoneConfig' because it is null.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:91 char:87
++ ... rivateendpointname -name "dnszonegroup" -PrivateDnsZoneConfig $config
++                                                                   ~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneGroup], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneGroupCommand
+
+
+
+PS C:\GroupBy\Demo\Security> .\PrivateEndpoint-SQLDB.ps1 -privateendpointname mysqlep -vnetname demo-vnet -resourcegroup demo -subnetname appnet -sqlserver aoazsqlserver -AzureProfileFilePath ..\..\MyAzureProfile.json
+Transcript started, output file is .\log\PrivateEndpoint-SQLDB.txt
+
+
+Name                                : mysqlep
+Type                                : Microsoft.Network/privateEndpoints
+Location                            : eastus
+ResourceGroupName                   : demo
+ProvisioningState                   : Succeeded
+Etag                                : W/"00a4df50-131d-4bcf-87a1-5fac119e3ec8"
+Id                                  : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Network/privateEndpoints/mysqlep
+Subnet                              : {
+                                        "Id": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Network/virtualNetworks/demo-v
+                                      net/subnets/appnet",
+                                        "IpAllocations": []
+                                      }
+NetworkInterfaces                   : [
+                                        {
+                                          "Id": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Network/networkInterfaces/my
+                                      sqlep.nic.99b3c3c4-27cd-4284-a741-cf8b54c67666"
+                                        }
+                                      ]
+PrivateLinkServiceConnections       : [
+                                        {
+                                          "ProvisioningState": "Succeeded",
+                                          "PrivateLinkServiceId":
+                                      "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Sql/servers/aoazsqlserver",
+                                          "GroupIds": [
+                                            "sqlServer"
+                                          ],
+                                          "PrivateLinkServiceConnectionState": {
+                                            "Status": "Approved",
+                                            "Description": "Auto-approved",
+                                            "ActionRequired": "None"
+                                          },
+                                          "Name": "mysqlep_connection",
+                                          "Etag": "W/\"00a4df50-131d-4bcf-87a1-5fac119e3ec8\"",
+                                          "Id": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Network/privateEndpoints/mys
+                                      qlep/privateLinkServiceConnections/mysqlep_connection"
+                                        }
+                                      ]
+ManualPrivateLinkServiceConnections : []
+CustomDnsConfigs                    : [
+                                        {
+                                          "Fqdn": "aoazsqlserver.database.windows.net",
+                                          "IpAddresses": [
+                                            "10.0.3.6"
+                                          ]
+                                        }
+                                      ]
+
+PS C:\GroupBy\Demo\Security> TerminatingError(New-AzPrivateDnsZone): "A parameter cannot be found that matches parameter name 'Force'."
+New-AzPrivateDnsZone : A parameter cannot be found that matches parameter name 'Force'.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:82 char:3
++   -Force
++   ~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [New-AzPrivateDnsZone], ParameterBindingException
+    + FullyQualifiedErrorId : NamedParameterNotFound,Microsoft.Azure.Commands.PrivateDns.Zones.NewAzurePrivateDnsZone
+New-AzPrivateDnsZone : A parameter cannot be found that matches parameter name 'Force'.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:82 char:3
++   -Force
++   ~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [New-AzPrivateDnsZone], ParameterBindingException
+    + FullyQualifiedErrorId : NamedParameterNotFound,Microsoft.Azure.Commands.PrivateDns.Zones.NewAzurePrivateDnsZone
+
+>> TerminatingError(New-AzPrivateDnsVirtualNetworkLink): "A parameter cannot be found that matches parameter name 'Force'."
+New-AzPrivateDnsVirtualNetworkLink : A parameter cannot be found that matches parameter name 'Force'.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:88 char:3
++   -Force
++   ~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [New-AzPrivateDnsVirtualNetworkLink], ParameterBindingException
+    + FullyQualifiedErrorId : 
+NamedParameterNotFound,Microsoft.Azure.Commands.PrivateDns.VirtualNetworkLinks.NewAzurePrivateDnsVirtualNetworkLink
+New-AzPrivateDnsVirtualNetworkLink : A parameter cannot be found that matches parameter name 'Force'.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:88 char:3
++   -Force
++   ~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [New-AzPrivateDnsVirtualNetworkLink], ParameterBindingException
+    + FullyQualifiedErrorId : NamedParameterNotFound,Microsoft.Azure.Commands.PrivateDns.VirtualNetworkLinks.NewAzurePrivateDnsVirtualNetworkLink
+
+>> TerminatingError(New-AzPrivateDnsZoneConfig): "Cannot validate argument on parameter 'PrivateDnsZoneId'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+New-AzPrivateDnsZoneConfig : Cannot validate argument on parameter 'PrivateDnsZoneId'. The argument is null or empty. 
+Provide an argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:90 char:97
++ ... ivatelink.database.windows.net" -PrivateDnsZoneId $dnszone.ResourceId
++                                                       ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneConfig], ParameterBindingValidationException
+    + FullyQualifiedErrorId : 
+ParameterArgumentValidationError,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneConfigCommand
+New-AzPrivateDnsZoneConfig : Cannot validate argument on parameter 'PrivateDnsZoneId'. The argument is null or empty. Provide an argument that is not null or empty, and
+then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:90 char:97
++ ... ivatelink.database.windows.net" -PrivateDnsZoneId $dnszone.ResourceId
++                                                       ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneConfig], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneConfigCommand
+
+>> TerminatingError(New-AzPrivateDnsZoneGroup): "Cannot bind parameter 'PrivateDnsZoneConfig'. Cannot convert the "" value of type "System.String" to type "Microsoft.Azure.Commands.Network.Models.PSPrivateDnsZoneConfig"."
+New-AzPrivateDnsZoneGroup : Cannot bind parameter 'PrivateDnsZoneConfig'. Cannot convert the "" value of type 
+"System.String" to type "Microsoft.Azure.Commands.Network.Models.PSPrivateDnsZoneConfig".
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:93 char:87
++ ... ivateendpointname -name "dnszonegroup" -PrivateDnsZoneConfig $config`
++                                                                  ~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [New-AzPrivateDnsZoneGroup], ParameterBindingException
+    + FullyQualifiedErrorId : 
+CannotConvertArgumentNoMessage,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneGroupCommand
+New-AzPrivateDnsZoneGroup : Cannot bind parameter 'PrivateDnsZoneConfig'. Cannot convert the "" value of type "System.String" to type
+"Microsoft.Azure.Commands.Network.Models.PSPrivateDnsZoneConfig".
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:93 char:87
++ ... ivateendpointname -name "dnszonegroup" -PrivateDnsZoneConfig $config`
++                                                                  ~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [New-AzPrivateDnsZoneGroup], ParameterBindingException
+    + FullyQualifiedErrorId : CannotConvertArgumentNoMessage,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneGroupCommand
+
+-Force : The term '-Force' is not recognized as the name of a cmdlet, function, script file, or operable program. Check 
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:94 char:2
++  -Force
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-Force:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+-Force : The term '-Force' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was
+included, verify that the path is correct and try again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:94 char:2
++  -Force
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-Force:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+
+
+PS C:\GroupBy\Demo\Security> .\PrivateEndpoint-SQLDB.ps1 -privateendpointname mysqlep -vnetname demo-vnet -resourcegroup demo -subnetname appnet -sqlserver aoazsqlserver -AzureProfileFilePath ..\..\MyAzureProfile.json
+Transcript started, output file is .\log\PrivateEndpoint-SQLDB.txt
+
+
+Name                                : mysqlep
+Type                                : Microsoft.Network/privateEndpoints
+Location                            : eastus
+ResourceGroupName                   : demo
+ProvisioningState                   : Succeeded
+Etag                                : W/"00a4df50-131d-4bcf-87a1-5fac119e3ec8"
+Id                                  : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Network/privateEndpoints/mysqlep
+Subnet                              : {
+                                        "Id": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Network/virtualNetworks/demo-v
+                                      net/subnets/appnet",
+                                        "IpAllocations": []
+                                      }
+NetworkInterfaces                   : [
+                                        {
+                                          "Id": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Network/networkInterfaces/my
+                                      sqlep.nic.99b3c3c4-27cd-4284-a741-cf8b54c67666"
+                                        }
+                                      ]
+PrivateLinkServiceConnections       : [
+                                        {
+                                          "ProvisioningState": "Succeeded",
+                                          "PrivateLinkServiceId":
+                                      "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Sql/servers/aoazsqlserver",
+                                          "GroupIds": [
+                                            "sqlServer"
+                                          ],
+                                          "PrivateLinkServiceConnectionState": {
+                                            "Status": "Approved",
+                                            "Description": "Auto-approved",
+                                            "ActionRequired": "None"
+                                          },
+                                          "Name": "mysqlep_connection",
+                                          "Etag": "W/\"00a4df50-131d-4bcf-87a1-5fac119e3ec8\"",
+                                          "Id": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Network/privateEndpoints/mys
+                                      qlep/privateLinkServiceConnections/mysqlep_connection"
+                                        }
+                                      ]
+ManualPrivateLinkServiceConnections : []
+CustomDnsConfigs                    : [
+                                        {
+                                          "Fqdn": "aoazsqlserver.database.windows.net",
+                                          "IpAddresses": [
+                                            "10.0.3.6"
+                                          ]
+                                        }
+                                      ]
+
+PS C:\GroupBy\Demo\Security> TerminatingError(New-AzPrivateDnsZone): "A parameter cannot be found that matches parameter name 'Force'."
+New-AzPrivateDnsZone : A parameter cannot be found that matches parameter name 'Force'.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:82 char:3
++   -Force
++   ~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [New-AzPrivateDnsZone], ParameterBindingException
+    + FullyQualifiedErrorId : NamedParameterNotFound,Microsoft.Azure.Commands.PrivateDns.Zones.NewAzurePrivateDnsZone
+New-AzPrivateDnsZone : A parameter cannot be found that matches parameter name 'Force'.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:82 char:3
++   -Force
++   ~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [New-AzPrivateDnsZone], ParameterBindingException
+    + FullyQualifiedErrorId : NamedParameterNotFound,Microsoft.Azure.Commands.PrivateDns.Zones.NewAzurePrivateDnsZone
+
+>> TerminatingError(New-AzPrivateDnsVirtualNetworkLink): "A parameter cannot be found that matches parameter name 'Force'."
+New-AzPrivateDnsVirtualNetworkLink : A parameter cannot be found that matches parameter name 'Force'.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:88 char:3
++   -Force
++   ~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [New-AzPrivateDnsVirtualNetworkLink], ParameterBindingException
+    + FullyQualifiedErrorId : 
+NamedParameterNotFound,Microsoft.Azure.Commands.PrivateDns.VirtualNetworkLinks.NewAzurePrivateDnsVirtualNetworkLink
+New-AzPrivateDnsVirtualNetworkLink : A parameter cannot be found that matches parameter name 'Force'.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:88 char:3
++   -Force
++   ~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [New-AzPrivateDnsVirtualNetworkLink], ParameterBindingException
+    + FullyQualifiedErrorId : NamedParameterNotFound,Microsoft.Azure.Commands.PrivateDns.VirtualNetworkLinks.NewAzurePrivateDnsVirtualNetworkLink
+
+>> TerminatingError(New-AzPrivateDnsZoneConfig): "Cannot validate argument on parameter 'PrivateDnsZoneId'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+New-AzPrivateDnsZoneConfig : Cannot validate argument on parameter 'PrivateDnsZoneId'. The argument is null or empty. 
+Provide an argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:90 char:97
++ ... ivatelink.database.windows.net" -PrivateDnsZoneId $dnszone.ResourceId
++                                                       ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneConfig], ParameterBindingValidationException
+    + FullyQualifiedErrorId : 
+ParameterArgumentValidationError,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneConfigCommand
+New-AzPrivateDnsZoneConfig : Cannot validate argument on parameter 'PrivateDnsZoneId'. The argument is null or empty. Provide an argument that is not null or empty, and
+then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:90 char:97
++ ... ivatelink.database.windows.net" -PrivateDnsZoneId $dnszone.ResourceId
++                                                       ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneConfig], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneConfigCommand
+
+>> TerminatingError(New-AzPrivateDnsZoneGroup): "Cannot bind parameter 'PrivateDnsZoneConfig'. Cannot convert the "" value of type "System.String" to type "Microsoft.Azure.Commands.Network.Models.PSPrivateDnsZoneConfig"."
+New-AzPrivateDnsZoneGroup : Cannot bind parameter 'PrivateDnsZoneConfig'. Cannot convert the "" value of type 
+"System.String" to type "Microsoft.Azure.Commands.Network.Models.PSPrivateDnsZoneConfig".
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:93 char:87
++ ... ivateendpointname -name "dnszonegroup" -PrivateDnsZoneConfig $config`
++                                                                  ~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [New-AzPrivateDnsZoneGroup], ParameterBindingException
+    + FullyQualifiedErrorId : 
+CannotConvertArgumentNoMessage,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneGroupCommand
+New-AzPrivateDnsZoneGroup : Cannot bind parameter 'PrivateDnsZoneConfig'. Cannot convert the "" value of type "System.String" to type
+"Microsoft.Azure.Commands.Network.Models.PSPrivateDnsZoneConfig".
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:93 char:87
++ ... ivateendpointname -name "dnszonegroup" -PrivateDnsZoneConfig $config`
++                                                                  ~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [New-AzPrivateDnsZoneGroup], ParameterBindingException
+    + FullyQualifiedErrorId : CannotConvertArgumentNoMessage,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneGroupCommand
+
+-Force : The term '-Force' is not recognized as the name of a cmdlet, function, script file, or operable program. Check 
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:94 char:2
++  -Force
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-Force:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+-Force : The term '-Force' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was
+included, verify that the path is correct and try again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:94 char:2
++  -Force
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-Force:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+
+
+PS C:\GroupBy\Demo\Security> .\PrivateEndpoint-SQLDB.ps1 -privateendpointname mysqlep -vnetname demo-vnet -resourcegroup demo -subnetname appnet -sqlserver aoazsqlserver -AzureProfileFilePath ..\..\MyAzureProfile.json
+Transcript started, output file is .\log\PrivateEndpoint-SQLDB.txt
+
+
+Name                                : mysqlep
+Type                                : Microsoft.Network/privateEndpoints
+Location                            : eastus
+ResourceGroupName                   : demo
+ProvisioningState                   : Succeeded
+Etag                                : W/"00a4df50-131d-4bcf-87a1-5fac119e3ec8"
+Id                                  : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Network/privateEndpoints/mysqlep
+Subnet                              : {
+                                        "Id": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Network/virtualNetworks/demo-v
+                                      net/subnets/appnet",
+                                        "IpAllocations": []
+                                      }
+NetworkInterfaces                   : [
+                                        {
+                                          "Id": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Network/networkInterfaces/my
+                                      sqlep.nic.99b3c3c4-27cd-4284-a741-cf8b54c67666"
+                                        }
+                                      ]
+PrivateLinkServiceConnections       : [
+                                        {
+                                          "ProvisioningState": "Succeeded",
+                                          "PrivateLinkServiceId":
+                                      "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Sql/servers/aoazsqlserver",
+                                          "GroupIds": [
+                                            "sqlServer"
+                                          ],
+                                          "PrivateLinkServiceConnectionState": {
+                                            "Status": "Approved",
+                                            "Description": "Auto-approved",
+                                            "ActionRequired": "None"
+                                          },
+                                          "Name": "mysqlep_connection",
+                                          "Etag": "W/\"00a4df50-131d-4bcf-87a1-5fac119e3ec8\"",
+                                          "Id": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Network/privateEndpoints/mys
+                                      qlep/privateLinkServiceConnections/mysqlep_connection"
+                                        }
+                                      ]
+ManualPrivateLinkServiceConnections : []
+CustomDnsConfigs                    : [
+                                        {
+                                          "Fqdn": "aoazsqlserver.database.windows.net",
+                                          "IpAddresses": [
+                                            "10.0.3.6"
+                                          ]
+                                        }
+                                      ]
+
+PS C:\GroupBy\Demo\Security> TerminatingError(New-AzPrivateDnsVirtualNetworkLink): "A parameter cannot be found that matches parameter name 'Force'."
+New-AzPrivateDnsVirtualNetworkLink : A parameter cannot be found that matches parameter name 'Force'.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:88 char:3
++   -Force
++   ~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [New-AzPrivateDnsVirtualNetworkLink], ParameterBindingException
+    + FullyQualifiedErrorId : 
+NamedParameterNotFound,Microsoft.Azure.Commands.PrivateDns.VirtualNetworkLinks.NewAzurePrivateDnsVirtualNetworkLink
+New-AzPrivateDnsVirtualNetworkLink : A parameter cannot be found that matches parameter name 'Force'.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:88 char:3
++   -Force
++   ~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [New-AzPrivateDnsVirtualNetworkLink], ParameterBindingException
+    + FullyQualifiedErrorId : NamedParameterNotFound,Microsoft.Azure.Commands.PrivateDns.VirtualNetworkLinks.NewAzurePrivateDnsVirtualNetworkLink
+
+PS C:\GroupBy\Demo\Security> TerminatingError(New-AzPrivateDnsZoneGroup): "Cannot bind parameter 'PrivateDnsZoneConfig'. Cannot convert the "Microsoft.Azure.Commands.Network.Models.PSPrivateDnsZoneConfig" value of type "System.String" to type "Microsoft.Azure.Commands.Network.Models.PSPrivateDnsZoneConfig"."
+New-AzPrivateDnsZoneGroup : Cannot bind parameter 'PrivateDnsZoneConfig'. Cannot convert the 
+"Microsoft.Azure.Commands.Network.Models.PSPrivateDnsZoneConfig" value of type "System.String" to type 
+"Microsoft.Azure.Commands.Network.Models.PSPrivateDnsZoneConfig".
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:93 char:87
++ ... ivateendpointname -name "dnszonegroup" -PrivateDnsZoneConfig $config`
++                                                                  ~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [New-AzPrivateDnsZoneGroup], ParameterBindingException
+    + FullyQualifiedErrorId : 
+CannotConvertArgumentNoMessage,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneGroupCommand
+New-AzPrivateDnsZoneGroup : Cannot bind parameter 'PrivateDnsZoneConfig'. Cannot convert the "Microsoft.Azure.Commands.Network.Models.PSPrivateDnsZoneConfig" value of
+type "System.String" to type "Microsoft.Azure.Commands.Network.Models.PSPrivateDnsZoneConfig".
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:93 char:87
++ ... ivateendpointname -name "dnszonegroup" -PrivateDnsZoneConfig $config`
++                                                                  ~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [New-AzPrivateDnsZoneGroup], ParameterBindingException
+    + FullyQualifiedErrorId : CannotConvertArgumentNoMessage,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneGroupCommand
+
+-Force : The term '-Force' is not recognized as the name of a cmdlet, function, script file, or operable program. Check 
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:94 char:2
++  -Force
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-Force:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+-Force : The term '-Force' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was
+included, verify that the path is correct and try again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:94 char:2
++  -Force
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-Force:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+
+
+PS C:\GroupBy\Demo\Security> cls
+PS C:\GroupBy\Demo\Security> .\PrivateEndpoint-SQLDB.ps1 -privateendpointname mysqlep -vnetname demo-vnet -resourcegroup demo -subnetname appnet -sqlserver aoazsqlserver -AzureProfileFilePath ..\..\MyAzureProfile.json
+Transcript started, output file is .\log\PrivateEndpoint-SQLDB.txt
+
+
+Name                                : mysqlep
+Type                                : Microsoft.Network/privateEndpoints
+Location                            : eastus
+ResourceGroupName                   : demo
+ProvisioningState                   : Succeeded
+Etag                                : W/"00a4df50-131d-4bcf-87a1-5fac119e3ec8"
+Id                                  : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Network/privateEndpoints/mysqlep
+Subnet                              : {
+                                        "Id": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Network/virtualNetworks/demo-v
+                                      net/subnets/appnet",
+                                        "IpAllocations": []
+                                      }
+NetworkInterfaces                   : [
+                                        {
+                                          "Id": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Network/networkInterfaces/my
+                                      sqlep.nic.99b3c3c4-27cd-4284-a741-cf8b54c67666"
+                                        }
+                                      ]
+PrivateLinkServiceConnections       : [
+                                        {
+                                          "ProvisioningState": "Succeeded",
+                                          "PrivateLinkServiceId":
+                                      "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Sql/servers/aoazsqlserver",
+                                          "GroupIds": [
+                                            "sqlServer"
+                                          ],
+                                          "PrivateLinkServiceConnectionState": {
+                                            "Status": "Approved",
+                                            "Description": "Auto-approved",
+                                            "ActionRequired": "None"
+                                          },
+                                          "Name": "mysqlep_connection",
+                                          "Etag": "W/\"00a4df50-131d-4bcf-87a1-5fac119e3ec8\"",
+                                          "Id": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Network/privateEndpoints/mys
+                                      qlep/privateLinkServiceConnections/mysqlep_connection"
+                                        }
+                                      ]
+ManualPrivateLinkServiceConnections : []
+CustomDnsConfigs                    : [
+                                        {
+                                          "Fqdn": "aoazsqlserver.database.windows.net",
+                                          "IpAddresses": [
+                                            "10.0.3.6"
+                                          ]
+                                        }
+                                      ]
+
+New-AzPrivateDnsZone : Long running operation failed with status 'Failed'. Additional Info:'The Zone 
+privatelink.database.windows.net exists already and hence cannot be created again.'
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:80 char:12
++ $dnszone = New-AzPrivateDnsZone -ResourceGroupName $resourcegroup `
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsZone], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.PrivateDns.Zones.NewAzurePrivateDnsZone
+New-AzPrivateDnsZone : Long running operation failed with status 'Failed'. Additional Info:'The Zone privatelink.database.windows.net exists already and hence cannot be
+created again.'
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:80 char:12
++ $dnszone = New-AzPrivateDnsZone -ResourceGroupName $resourcegroup `
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsZone], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.PrivateDns.Zones.NewAzurePrivateDnsZone
+
+
+Name                    : vnetdnszonelink
+ResourceId              : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Network/privateDnsZones/privatelink.database.window
+                          s.net/virtualNetworkLinks/vnetdnszonelink
+ResourceGroupName       : demo
+ZoneName                : privatelink.database.windows.net
+VirtualNetworkId        : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Network/virtualNetworks/demo-vnet
+Location                :
+Etag                    : "7000fe60-0000-0100-0000-5f9522ec0000"
+Tags                    :
+RegistrationEnabled     : False
+VirtualNetworkLinkState : Completed
+ProvisioningState       : Succeeded
+
+PS C:\GroupBy\Demo\Security> TerminatingError(New-AzPrivateDnsZoneConfig): "Cannot validate argument on parameter 'PrivateDnsZoneId'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+New-AzPrivateDnsZoneConfig : Cannot validate argument on parameter 'PrivateDnsZoneId'. The argument is null or empty. 
+Provide an argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:90 char:97
++ ... ivatelink.database.windows.net" -PrivateDnsZoneId $dnszone.ResourceId
++                                                       ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneConfig], ParameterBindingValidationException
+    + FullyQualifiedErrorId : 
+ParameterArgumentValidationError,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneConfigCommand
+New-AzPrivateDnsZoneConfig : Cannot validate argument on parameter 'PrivateDnsZoneId'. The argument is null or empty. Provide an argument that is not null or empty, and
+then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:90 char:97
++ ... ivatelink.database.windows.net" -PrivateDnsZoneId $dnszone.ResourceId
++                                                       ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneConfig], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneConfigCommand
+
+>> TerminatingError(New-AzPrivateDnsZoneGroup): "Cannot bind parameter 'PrivateDnsZoneConfig'. Cannot convert the "" value of type "System.String" to type "Microsoft.Azure.Commands.Network.Models.PSPrivateDnsZoneConfig"."
+New-AzPrivateDnsZoneGroup : Cannot bind parameter 'PrivateDnsZoneConfig'. Cannot convert the "" value of type 
+"System.String" to type "Microsoft.Azure.Commands.Network.Models.PSPrivateDnsZoneConfig".
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:93 char:87
++ ... ivateendpointname -name "dnszonegroup" -PrivateDnsZoneConfig $config`
++                                                                  ~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [New-AzPrivateDnsZoneGroup], ParameterBindingException
+    + FullyQualifiedErrorId : 
+CannotConvertArgumentNoMessage,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneGroupCommand
+New-AzPrivateDnsZoneGroup : Cannot bind parameter 'PrivateDnsZoneConfig'. Cannot convert the "" value of type "System.String" to type
+"Microsoft.Azure.Commands.Network.Models.PSPrivateDnsZoneConfig".
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:93 char:87
++ ... ivateendpointname -name "dnszonegroup" -PrivateDnsZoneConfig $config`
++                                                                  ~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [New-AzPrivateDnsZoneGroup], ParameterBindingException
+    + FullyQualifiedErrorId : CannotConvertArgumentNoMessage,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneGroupCommand
+
+-Force : The term '-Force' is not recognized as the name of a cmdlet, function, script file, or operable program. Check 
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:94 char:2
++  -Force
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-Force:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+-Force : The term '-Force' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was
+included, verify that the path is correct and try again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:94 char:2
++  -Force
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-Force:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+
+
+PS C:\GroupBy\Demo\Security> cls
+File Not Found C:\GroupBy\Demo\MyAzureProfile.json
+Connect-AzAccount : User canceled authentication
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:48 char:18
++     $azprofile = Connect-AzAccount
++                  ~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Connect-AzAccount], AdalServiceException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Profile.ConnectAzureRmAccountCommand
+Connect-AzAccount : User canceled authentication
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:48 char:18
++     $azprofile = Connect-AzAccount
++                  ~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Connect-AzAccount], AdalServiceException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Profile.ConnectAzureRmAccountCommand
+
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+PS C:\GroupBy\Demo\Security> .\PrivateEndpoint-SQLDB.ps1 -privateendpointname mysqlep -vnetname demo-vnet -resourcegroup demo -subnetname appnet -sqlserver aoazsqlserver -AzureProfileFilePath ..\..\MyAzureProfile.json
+Transcript started, output file is .\log\PrivateEndpoint-SQLDB.txt
+
+
+Name                                : mysqlep
+Type                                : Microsoft.Network/privateEndpoints
+Location                            : eastus
+ResourceGroupName                   : demo
+ProvisioningState                   : Succeeded
+Etag                                : W/"4b7687ab-4cce-4df2-a57e-ee676505fccf"
+Id                                  : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Network/privateEndpoints/mysqlep
+Subnet                              : {
+                                        "Id": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Network/virtualNetworks/demo-v
+                                      net/subnets/appnet",
+                                        "IpAllocations": []
+                                      }
+NetworkInterfaces                   : [
+                                        {
+                                          "Id": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Network/networkInterfaces/my
+                                      sqlep.nic.e7265038-3bc0-418f-a7a9-96f27e1596e1"
+                                        }
+                                      ]
+PrivateLinkServiceConnections       : [
+                                        {
+                                          "ProvisioningState": "Succeeded",
+                                          "PrivateLinkServiceId":
+                                      "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Sql/servers/aoazsqlserver",
+                                          "GroupIds": [
+                                            "sqlServer"
+                                          ],
+                                          "PrivateLinkServiceConnectionState": {
+                                            "Status": "Approved",
+                                            "Description": "Auto-approved",
+                                            "ActionRequired": "None"
+                                          },
+                                          "Name": "mysqlep_connection",
+                                          "Etag": "W/\"4b7687ab-4cce-4df2-a57e-ee676505fccf\"",
+                                          "Id": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Network/privateEndpoints/mys
+                                      qlep/privateLinkServiceConnections/mysqlep_connection"
+                                        }
+                                      ]
+ManualPrivateLinkServiceConnections : []
+CustomDnsConfigs                    : [
+                                        {
+                                          "Fqdn": "aoazsqlserver.database.windows.net",
+                                          "IpAddresses": [
+                                            "10.0.3.5"
+                                          ]
+                                        }
+                                      ]
+
+
+Name                    : vnetdnszonelink
+ResourceId              : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Network/privateDnsZones/privatelink.database.window
+                          s.net/virtualNetworkLinks/vnetdnszonelink
+ResourceGroupName       : demo
+ZoneName                : privatelink.database.windows.net
+VirtualNetworkId        : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Network/virtualNetworks/demo-vnet
+Location                :
+Etag                    : "7000dcce-0000-0100-0000-5f95277f0000"
+Tags                    :
+RegistrationEnabled     : False
+VirtualNetworkLinkState : Completed
+ProvisioningState       : Succeeded
+
+
+ProvisioningState         : Succeeded
+PrivateDnsZoneConfigs     : {privatelink.database.windows.net}
+PrivateDnsZoneConfigsText : [
+                              {
+                                "Name": "privatelink.database.windows.net",
+                                "PrivateDnsZoneId": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Network/privateDnsZones/
+                            privatelink.database.windows.net",
+                                "RecordSets": [
+                                  {
+                                    "RecordType": "A",
+                                    "RecordSetName": "aoazsqlserver",
+                                    "Fqdn": "aoazsqlserver.privatelink.database.windows.net",
+                                    "ProvisioningState": "Succeeded",
+                                    "Ttl": 10,
+                                    "IpAddresses": [
+                                      "10.0.3.5"
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+Name                      : dnszonegroup
+Etag                      : W/"4dca56b4-647e-4c2b-aad1-9d97ebb80469"
+Id                        : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Network/privateEndpoints/mysqlep/privateDnsZoneGr
+                            oups/dnszonegroup
+
+
+
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20201025072952
+Username: appvm\aosama
+RunAs User: appvm\aosama
+Configuration Name: 
+Machine: appvm (Microsoft Windows NT 10.0.17763.0)
+Host Application: powershell -noninteractive -noprofile -File -
+Process ID: 7460
+PSVersion: 5.1.17763.1007
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17763.1007
+BuildVersion: 10.0.17763.1007
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is .\log\PrivateEndpoint-SQLDB.txt
+
+
+Name                                : sqlprivateendpoint
+Type                                : Microsoft.Network/privateEndpoints
+Location                            : eastus
+ResourceGroupName                   : demo
+ProvisioningState                   : Succeeded
+Etag                                : W/"a3344d29-174c-41e2-889e-14001514793a"
+Id                                  : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers
+                                      /Microsoft.Network/privateEndpoints/sqlprivateendpoint
+Subnet                              : {
+                                        "Id": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/
+                                      providers/Microsoft.Network/virtualNetworks/demo-vnet/subnets/appnet",
+                                        "IpAllocations": []
+                                      }
+NetworkInterfaces                   : [
+                                        {
+                                          "Id": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/dem
+                                      o/providers/Microsoft.Network/networkInterfaces/sqlprivateendpoint.nic.fa77bb7a-9
+                                      a25-44f7-b9ee-9d32aae3dc56"
+                                        }
+                                      ]
+PrivateLinkServiceConnections       : [
+                                        {
+                                          "ProvisioningState": "Succeeded",
+                                          "PrivateLinkServiceId": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/
+                                      resourceGroups/demo/providers/Microsoft.Sql/servers/aoazsqlserver",
+                                          "GroupIds": [
+                                            "sqlServer"
+                                          ],
+                                          "PrivateLinkServiceConnectionState": {
+                                            "Status": "Approved",
+                                            "Description": "Auto-approved",
+                                            "ActionRequired": "None"
+                                          },
+                                          "Name": "sqlprivateendpoint_connection",
+                                          "Etag": "W/\"a3344d29-174c-41e2-889e-14001514793a\"",
+                                          "Id": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/dem
+                                      o/providers/Microsoft.Network/privateEndpoints/sqlprivateendpoint/privateLinkServ
+                                      iceConnections/sqlprivateendpoint_connection"
+                                        }
+                                      ]
+ManualPrivateLinkServiceConnections : []
+CustomDnsConfigs                    : [
+                                        {
+                                          "Fqdn": "aoazsqlserver.database.windows.net",
+                                          "IpAddresses": [
+                                            "10.0.3.5"
+                                          ]
+                                        }
+                                      ]
+
+New-AzPrivateDnsZone : Long running operation failed with status 'Failed'. Additional Info:'The Zone 
+privatelink.database.windows.net exists already and hence cannot be created again.'
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:80 char:12
++ $dnszone = New-AzPrivateDnsZone -ResourceGroupName $resourcegroup `
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsZone], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.PrivateDns.Zones.NewAzurePrivateDnsZone
+New-AzPrivateDnsZone : Long running operation failed with status 'Failed'. Additional Info:'The Zone
+privatelink.database.windows.net exists already and hence cannot be created again.'
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:80 char:12
++ $dnszone = New-AzPrivateDnsZone -ResourceGroupName $resourcegroup `
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsZone], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.PrivateDns.Zones.NewAzurePrivateDnsZone
+
+New-AzPrivateDnsVirtualNetworkLink : Long running operation failed with status 'Failed'. Additional Info:'The Virtual 
+Network link vnetdnszonelink for the Private DNS zone privatelink.database.windows.net exists already and hence cannot 
+be created again.'
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:84 char:1
++ New-AzPrivateDnsVirtualNetworkLink -ResourceGroupName $resourcegroup  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsVirtualNetworkLink], CloudException
+    + FullyQualifiedErrorId : 
+Microsoft.Azure.Commands.PrivateDns.VirtualNetworkLinks.NewAzurePrivateDnsVirtualNetworkLink
+New-AzPrivateDnsVirtualNetworkLink : Long running operation failed with status 'Failed'. Additional Info:'The Virtual
+Network link vnetdnszonelink for the Private DNS zone privatelink.database.windows.net exists already and hence cannot
+be created again.'
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:84 char:1
++ New-AzPrivateDnsVirtualNetworkLink -ResourceGroupName $resourcegroup  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsVirtualNetworkLink], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.PrivateDns.VirtualNetworkLinks.NewAzurePrivateDnsVirtualNetwork
+   Link
+
+PS>TerminatingError(New-AzPrivateDnsZoneConfig): "Cannot validate argument on parameter 'PrivateDnsZoneId'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+New-AzPrivateDnsZoneConfig : Cannot validate argument on parameter 'PrivateDnsZoneId'. The argument is null or empty. 
+Provide an argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:90 char:97
++ ... ivatelink.database.windows.net" -PrivateDnsZoneId $dnszone.ResourceId
++                                                       ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneConfig], ParameterBindingValidationException
+    + FullyQualifiedErrorId : 
+ParameterArgumentValidationError,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneConfigCommand
+New-AzPrivateDnsZoneConfig : Cannot validate argument on parameter 'PrivateDnsZoneId'. The argument is null or empty.
+Provide an argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:90 char:97
++ ... ivatelink.database.windows.net" -PrivateDnsZoneId $dnszone.ResourceId
++                                                       ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneConfig], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZone
+   ConfigCommand
+
+>> TerminatingError(New-AzPrivateDnsZoneGroup): "Cannot bind argument to parameter 'PrivateDnsZoneConfig' because it is null."
+New-AzPrivateDnsZoneGroup : Cannot bind argument to parameter 'PrivateDnsZoneConfig' because it is null.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:92 char:146
++ ... rivateendpointname -name "dnszonegroup" -PrivateDnsZoneConfig $config
++                                                                   ~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneGroup], ParameterBindingValidationException
+    + FullyQualifiedErrorId : 
+ParameterArgumentValidationErrorNullNotAllowed,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneGroupCommand
+New-AzPrivateDnsZoneGroup : Cannot bind argument to parameter 'PrivateDnsZoneConfig' because it is null.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:92 char:146
++ ... rivateendpointname -name "dnszonegroup" -PrivateDnsZoneConfig $config
++                                                                   ~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneGroup], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.Azure.Commands.Network.NewAzure
+   PrivateDnsZoneGroupCommand
+
+
+
+^. {
+>> . {
+Set-Location "C:\GroupBy\Demo\Security"
+.\PrivateEndpoint-SQLDB.ps1 -vnetname demo-vnet `
+-PrivateEndpointname sqlprivateendpoint `
+-resourcegroup demo `
+-subnetname appnet `
+-sqlserver aoazsqlserver `
+-AzureProfileFilePath C:\GroupBy\MyAzureProfile.json
+}
+Transcript started, output file is .\log\PrivateEndpoint-SQLDB.txt
+
+
+Name                                : sqlprivateendpoint
+Type                                : Microsoft.Network/privateEndpoints
+Location                            : eastus
+ResourceGroupName                   : demo
+ProvisioningState                   : Succeeded
+Etag                                : W/"3c90381c-3071-47af-98d2-11de759ace8c"
+Id                                  : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers
+                                      /Microsoft.Network/privateEndpoints/sqlprivateendpoint
+Subnet                              : {
+                                        "Id": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/
+                                      providers/Microsoft.Network/virtualNetworks/demo-vnet/subnets/appnet",
+                                        "IpAllocations": []
+                                      }
+NetworkInterfaces                   : [
+                                        {
+                                          "Id": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/dem
+                                      o/providers/Microsoft.Network/networkInterfaces/sqlprivateendpoint.nic.fa77bb7a-9
+                                      a25-44f7-b9ee-9d32aae3dc56"
+                                        }
+                                      ]
+PrivateLinkServiceConnections       : [
+                                        {
+                                          "ProvisioningState": "Succeeded",
+                                          "PrivateLinkServiceId": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/
+                                      resourceGroups/demo/providers/Microsoft.Sql/servers/aoazsqlserver",
+                                          "GroupIds": [
+                                            "sqlServer"
+                                          ],
+                                          "PrivateLinkServiceConnectionState": {
+                                            "Status": "Approved",
+                                            "Description": "Auto-approved",
+                                            "ActionRequired": "None"
+                                          },
+                                          "Name": "sqlprivateendpoint_connection",
+                                          "Etag": "W/\"3c90381c-3071-47af-98d2-11de759ace8c\"",
+                                          "Id": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/dem
+                                      o/providers/Microsoft.Network/privateEndpoints/sqlprivateendpoint/privateLinkServ
+                                      iceConnections/sqlprivateendpoint_connection"
+                                        }
+                                      ]
+ManualPrivateLinkServiceConnections : []
+CustomDnsConfigs                    : []
+
+
+Name                    : vnetdnszonelink
+ResourceId              : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.N
+                          etwork/privateDnsZones/privatelink.database.windows.net/virtualNetworkLinks/vnetdnszonelink
+ResourceGroupName       : demo
+ZoneName                : privatelink.database.windows.net
+VirtualNetworkId        : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.N
+                          etwork/virtualNetworks/demo-vnet
+Location                :
+Etag                    : "7100391b-0000-0100-0000-5f952add0000"
+Tags                    :
+RegistrationEnabled     : False
+VirtualNetworkLinkState : Completed
+ProvisioningState       : Succeeded
+
+Confirm
+Are you sure you want to overwrite resource 'dnszonegroup'
+&Yes  &No  &Suspend
+New-AzPrivateDnsZoneGroup : Windows PowerShell is in NonInteractive mode. Read and Prompt functionality is not 
+available.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:92 char:1
++ New-AzPrivateDnsZoneGroup -ResourceGroupName $resourcegroup -PrivateE ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsZoneGroup], PSInvalidOperationException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneGroupCommand
+New-AzPrivateDnsZoneGroup : Windows PowerShell is in NonInteractive mode. Read and Prompt functionality is not
+available.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:92 char:1
++ New-AzPrivateDnsZoneGroup -ResourceGroupName $resourcegroup -PrivateE ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsZoneGroup], PSInvalidOperationException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneGroupCommand
+
+
+
+^. {
+>> . {
+Set-Location "C:\GroupBy\Demo\Security"
+.\PrivateEndpoint-SQLDB.ps1 -vnetname demo-vnet `
+-PrivateEndpointname sqlprivateendpoint `
+-resourcegroup demo `
+-subnetname appnet `
+-sqlserver aoazsqlserver `
+-AzureProfileFilePath C:\GroupBy\MyAzureProfile.json
+}
+Transcript started, output file is .\log\PrivateEndpoint-SQLDB.txt
+
+
+Name                                : sqlprivateendpoint
+Type                                : Microsoft.Network/privateEndpoints
+Location                            : eastus
+ResourceGroupName                   : demo
+ProvisioningState                   : Succeeded
+Etag                                : W/"3c90381c-3071-47af-98d2-11de759ace8c"
+Id                                  : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers
+                                      /Microsoft.Network/privateEndpoints/sqlprivateendpoint
+Subnet                              : {
+                                        "Id": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/
+                                      providers/Microsoft.Network/virtualNetworks/demo-vnet/subnets/appnet",
+                                        "IpAllocations": []
+                                      }
+NetworkInterfaces                   : [
+                                        {
+                                          "Id": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/dem
+                                      o/providers/Microsoft.Network/networkInterfaces/sqlprivateendpoint.nic.fa77bb7a-9
+                                      a25-44f7-b9ee-9d32aae3dc56"
+                                        }
+                                      ]
+PrivateLinkServiceConnections       : [
+                                        {
+                                          "ProvisioningState": "Succeeded",
+                                          "PrivateLinkServiceId": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/
+                                      resourceGroups/demo/providers/Microsoft.Sql/servers/aoazsqlserver",
+                                          "GroupIds": [
+                                            "sqlServer"
+                                          ],
+                                          "PrivateLinkServiceConnectionState": {
+                                            "Status": "Approved",
+                                            "Description": "Auto-approved",
+                                            "ActionRequired": "None"
+                                          },
+                                          "Name": "sqlprivateendpoint_connection",
+                                          "Etag": "W/\"3c90381c-3071-47af-98d2-11de759ace8c\"",
+                                          "Id": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/dem
+                                      o/providers/Microsoft.Network/privateEndpoints/sqlprivateendpoint/privateLinkServ
+                                      iceConnections/sqlprivateendpoint_connection"
+                                        }
+                                      ]
+ManualPrivateLinkServiceConnections : []
+CustomDnsConfigs                    : []
+
+New-AzPrivateDnsZone : Long running operation failed with status 'Failed'. Additional Info:'The Zone 
+privatelink.database.windows.net exists already and hence cannot be created again.'
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:80 char:12
++ $dnszone = New-AzPrivateDnsZone -ResourceGroupName $resourcegroup `
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsZone], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.PrivateDns.Zones.NewAzurePrivateDnsZone
+New-AzPrivateDnsZone : Long running operation failed with status 'Failed'. Additional Info:'The Zone
+privatelink.database.windows.net exists already and hence cannot be created again.'
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:80 char:12
++ $dnszone = New-AzPrivateDnsZone -ResourceGroupName $resourcegroup `
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsZone], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.PrivateDns.Zones.NewAzurePrivateDnsZone
+
+New-AzPrivateDnsVirtualNetworkLink : Long running operation failed with status 'Failed'. Additional Info:'The Virtual 
+Network link vnetdnszonelink for the Private DNS zone privatelink.database.windows.net exists already and hence cannot 
+be created again.'
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:84 char:1
++ New-AzPrivateDnsVirtualNetworkLink -ResourceGroupName $resourcegroup  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsVirtualNetworkLink], CloudException
+    + FullyQualifiedErrorId : 
+Microsoft.Azure.Commands.PrivateDns.VirtualNetworkLinks.NewAzurePrivateDnsVirtualNetworkLink
+New-AzPrivateDnsVirtualNetworkLink : Long running operation failed with status 'Failed'. Additional Info:'The Virtual
+Network link vnetdnszonelink for the Private DNS zone privatelink.database.windows.net exists already and hence cannot
+be created again.'
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:84 char:1
++ New-AzPrivateDnsVirtualNetworkLink -ResourceGroupName $resourcegroup  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsVirtualNetworkLink], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.PrivateDns.VirtualNetworkLinks.NewAzurePrivateDnsVirtualNetwork
+   Link
+
+^TerminatingError(New-AzPrivateDnsZoneConfig): "Cannot validate argument on parameter 'PrivateDnsZoneId'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+New-AzPrivateDnsZoneConfig : Cannot validate argument on parameter 'PrivateDnsZoneId'. The argument is null or empty. 
+Provide an argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:90 char:97
++ ... ivatelink.database.windows.net" -PrivateDnsZoneId $dnszone.ResourceId
++                                                       ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneConfig], ParameterBindingValidationException
+    + FullyQualifiedErrorId : 
+ParameterArgumentValidationError,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneConfigCommand
+New-AzPrivateDnsZoneConfig : Cannot validate argument on parameter 'PrivateDnsZoneId'. The argument is null or empty.
+Provide an argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:90 char:97
++ ... ivatelink.database.windows.net" -PrivateDnsZoneId $dnszone.ResourceId
++                                                       ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneConfig], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZone
+   ConfigCommand
+
+>> TerminatingError(New-AzPrivateDnsZoneGroup): "Cannot bind argument to parameter 'PrivateDnsZoneConfig' because it is null."
+New-AzPrivateDnsZoneGroup : Cannot bind argument to parameter 'PrivateDnsZoneConfig' because it is null.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:92 char:146
++ ... ndpointname -name "dnszonegroup" -PrivateDnsZoneConfig $config -Force
++                                                            ~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneGroup], ParameterBindingValidationException
+    + FullyQualifiedErrorId : 
+ParameterArgumentValidationErrorNullNotAllowed,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneGroupCommand
+New-AzPrivateDnsZoneGroup : Cannot bind argument to parameter 'PrivateDnsZoneConfig' because it is null.
+At C:\GroupBy\Demo\Security\PrivateEndpoint-SQLDB.ps1:92 char:146
++ ... ndpointname -name "dnszonegroup" -PrivateDnsZoneConfig $config -Force
++                                                            ~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneGroup], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.Azure.Commands.Network.NewAzure
+   PrivateDnsZoneGroupCommand
+
+
+
+^. {
+>> . {
+Set-Location "C:\GroupBy\Demo\Security"
+.\PrivateEndpoint-SQLDB.ps1 -vnetname demo-vnet `
+-PrivateEndpointname sqlprivateendpoint `
+-resourcegroup demo `
+-subnetname appnet `
+-sqlserver aoazsqlserver `
+-AzureProfileFilePath C:\GroupBy\MyAzureProfile.json
+}
+Transcript started, output file is .\log\PrivateEndpoint-SQLDB.txt
+
+
+Name                                : sqlprivateendpoint
+Type                                : Microsoft.Network/privateEndpoints
+Location                            : eastus
+ResourceGroupName                   : demo
+ProvisioningState                   : Succeeded
+Etag                                : W/"37dd818a-eac7-4955-b52e-29b78b2cdc6f"
+Id                                  : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers
+                                      /Microsoft.Network/privateEndpoints/sqlprivateendpoint
+Subnet                              : {
+                                        "Id": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/
+                                      providers/Microsoft.Network/virtualNetworks/demo-vnet/subnets/appnet",
+                                        "IpAllocations": []
+                                      }
+NetworkInterfaces                   : [
+                                        {
+                                          "Id": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/dem
+                                      o/providers/Microsoft.Network/networkInterfaces/sqlprivateendpoint.nic.27129aa9-5
+                                      5c6-47ce-b66a-85fade205a2b"
+                                        }
+                                      ]
+PrivateLinkServiceConnections       : [
+                                        {
+                                          "ProvisioningState": "Succeeded",
+                                          "PrivateLinkServiceId": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/
+                                      resourceGroups/demo/providers/Microsoft.Sql/servers/aoazsqlserver",
+                                          "GroupIds": [
+                                            "sqlServer"
+                                          ],
+                                          "PrivateLinkServiceConnectionState": {
+                                            "Status": "Approved",
+                                            "Description": "Auto-approved",
+                                            "ActionRequired": "None"
+                                          },
+                                          "Name": "sqlprivateendpoint_connection",
+                                          "Etag": "W/\"37dd818a-eac7-4955-b52e-29b78b2cdc6f\"",
+                                          "Id": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/dem
+                                      o/providers/Microsoft.Network/privateEndpoints/sqlprivateendpoint/privateLinkServ
+                                      iceConnections/sqlprivateendpoint_connection"
+                                        }
+                                      ]
+ManualPrivateLinkServiceConnections : []
+CustomDnsConfigs                    : [
+                                        {
+                                          "Fqdn": "aoazsqlserver.database.windows.net",
+                                          "IpAddresses": [
+                                            "10.0.3.5"
+                                          ]
+                                        }
+                                      ]
+
+
+Name                    : vnetdnszonelink
+ResourceId              : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.N
+                          etwork/privateDnsZones/privatelink.database.windows.net/virtualNetworkLinks/vnetdnszonelink
+ResourceGroupName       : demo
+ZoneName                : privatelink.database.windows.net
+VirtualNetworkId        : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.N
+                          etwork/virtualNetworks/demo-vnet
+Location                :
+Etag                    : "7100df4c-0000-0100-0000-5f952d0f0000"
+Tags                    :
+RegistrationEnabled     : False
+VirtualNetworkLinkState : Completed
+ProvisioningState       : Succeeded
+
+
+ProvisioningState         : Succeeded
+PrivateDnsZoneConfigs     : {privatelink.database.windows.net}
+PrivateDnsZoneConfigsText : [
+                              {
+                                "Name": "privatelink.database.windows.net",
+                                "PrivateDnsZoneId": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups
+                            /demo/providers/Microsoft.Network/privateDnsZones/privatelink.database.windows.net",
+                                "RecordSets": [
+                                  {
+                                    "RecordType": "A",
+                                    "RecordSetName": "aoazsqlserver",
+                                    "Fqdn": "aoazsqlserver.privatelink.database.windows.net",
+                                    "ProvisioningState": "Succeeded",
+                                    "Ttl": 10,
+                                    "IpAddresses": [
+                                      "10.0.3.5"
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+Name                      : dnszonegroup
+Etag                      : W/"f3e74d0e-90f8-49e8-be1b-47081f85a22c"
+Id                        : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft
+                            .Network/privateEndpoints/sqlprivateendpoint/privateDnsZoneGroups/dnszonegroup
+
+
+

@@ -1,0 +1,525 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20201028031233
+Username: appvm\aosama
+RunAs User: appvm\aosama
+Configuration Name: 
+Machine: appvm (Microsoft Windows NT 10.0.17763.0)
+Host Application: powershell -noninteractive -noprofile -File -
+Process ID: 1360
+PSVersion: 5.1.17763.1007
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17763.1007
+BuildVersion: 10.0.17763.1007
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is .\Log\Manage-ActiveGeoReplication.txt
+Set-AzContext : Please provide a valid tenant or a valid subscription.
+At C:\GroupBy\Demo\HA&DR\Manage-ActiveGeoReplication.ps1:60 char:1
++ Set-AzContext -SubscriptionId $SubscriptionID | Out-Null
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Set-AzContext], ArgumentException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Profile.SetAzureRMContextCommand
+Set-AzContext : Please provide a valid tenant or a valid subscription.
+At C:\GroupBy\Demo\HA&DR\Manage-ActiveGeoReplication.ps1:60 char:1
++ Set-AzContext -SubscriptionId $SubscriptionID | Out-Null
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Set-AzContext], ArgumentException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Profile.SetAzureRMContextCommand
+
+Provisioning Azure SQL Server aoazsqlserversecondary
+-SecondaryServerLocation
+New-AzSqlServer : Your Azure credentials have not been set up or have expired, please run Connect-AzAccount to set up 
+your Azure credentials.
+At C:\GroupBy\Demo\HA&DR\Manage-ActiveGeoReplication.ps1:83 char:14
++              New-AzSqlServer @_SecondarySqlServer;
++              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzSqlServer], ArgumentException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Server.Cmdlet.NewAzureSqlServer
+New-AzSqlServer : Your Azure credentials have not been set up or have expired, please run Connect-AzAccount to set up
+your Azure credentials.
+At C:\GroupBy\Demo\HA&DR\Manage-ActiveGeoReplication.ps1:83 char:14
++              New-AzSqlServer @_SecondarySqlServer;
++              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzSqlServer], ArgumentException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Server.Cmdlet.NewAzureSqlServer
+
+^. {
+>> . {
+Set-Location -Path "C:\GroupBy\Demo\HA&DR"
+.\Manage-ActiveGeoReplication.ps1 -ResourceGroup demo `
+-PrimarySQLServer aoazsqlserver `
+-Username aosama `
+-Password Awesome@1234`
+-SecondarySQLServer aoazsqlserversecondary`
+-SecondaryServerLocation eastus2`
+-DatabasesToReplicate aostackoverflow2010`
+-Operation "Enable"`
+-AzureProfileFilePath "C:\GroupBy\MyAzureProfile.json"`
+-Failover $False
+}
+Transcript started, output file is .\Log\Manage-ActiveGeoReplication.txt
+Set-AzContext : Please provide a valid tenant or a valid subscription.
+At C:\GroupBy\Demo\HA&DR\Manage-ActiveGeoReplication.ps1:60 char:1
++ Set-AzContext -SubscriptionId $SubscriptionID | Out-Null
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Set-AzContext], ArgumentException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Profile.SetAzureRMContextCommand
+Set-AzContext : Please provide a valid tenant or a valid subscription.
+At C:\GroupBy\Demo\HA&DR\Manage-ActiveGeoReplication.ps1:60 char:1
++ Set-AzContext -SubscriptionId $SubscriptionID | Out-Null
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Set-AzContext], ArgumentException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Profile.SetAzureRMContextCommand
+
+Provisioning Azure SQL Server aoazsqlserversecondary
+-SecondaryServerLocation
+New-AzSqlServer : Your Azure credentials have not been set up or have expired, please run Connect-AzAccount to set up 
+your Azure credentials.
+At C:\GroupBy\Demo\HA&DR\Manage-ActiveGeoReplication.ps1:83 char:14
++              New-AzSqlServer @_SecondarySqlServer;
++              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzSqlServer], ArgumentException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Server.Cmdlet.NewAzureSqlServer
+New-AzSqlServer : Your Azure credentials have not been set up or have expired, please run Connect-AzAccount to set up
+your Azure credentials.
+At C:\GroupBy\Demo\HA&DR\Manage-ActiveGeoReplication.ps1:83 char:14
++              New-AzSqlServer @_SecondarySqlServer;
++              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzSqlServer], ArgumentException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Server.Cmdlet.NewAzureSqlServer
+
+^. {
+>> . {
+Set-Location -Path "C:\GroupBy\Demo\HA&DR"
+.\Manage-ActiveGeoReplication.ps1 -ResourceGroup demo `
+-PrimarySQLServer aoazsqlserver `
+-Username aosama `
+-Password Awesome@1234`
+-SecondarySQLServer aoazsqlserversecondary`
+-SecondaryServerLocation eastus2`
+-DatabasesToReplicate aostackoverflow2010`
+-Operation "Enable"`
+-AzureProfileFilePath "C:\GroupBy\MyAzureProfile.json"`
+-Failover $False
+}
+Transcript started, output file is .\Log\Manage-ActiveGeoReplication.txt
+Set-AzContext : Please provide a valid tenant or a valid subscription.
+At C:\GroupBy\Demo\HA&DR\Manage-ActiveGeoReplication.ps1:60 char:1
++ Set-AzContext -SubscriptionId $SubscriptionID | Out-Null
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Set-AzContext], ArgumentException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Profile.SetAzureRMContextCommand
+Set-AzContext : Please provide a valid tenant or a valid subscription.
+At C:\GroupBy\Demo\HA&DR\Manage-ActiveGeoReplication.ps1:60 char:1
++ Set-AzContext -SubscriptionId $SubscriptionID | Out-Null
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Set-AzContext], ArgumentException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Profile.SetAzureRMContextCommand
+
+Provisioning Azure SQL Server aoazsqlserversecondary
+-SecondaryServerLocation
+New-AzSqlServer : Your Azure credentials have not been set up or have expired, please run Connect-AzAccount to set up 
+your Azure credentials.
+At C:\GroupBy\Demo\HA&DR\Manage-ActiveGeoReplication.ps1:83 char:14
++              New-AzSqlServer @_SecondarySqlServer;
++              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzSqlServer], ArgumentException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Server.Cmdlet.NewAzureSqlServer
+New-AzSqlServer : Your Azure credentials have not been set up or have expired, please run Connect-AzAccount to set up
+your Azure credentials.
+At C:\GroupBy\Demo\HA&DR\Manage-ActiveGeoReplication.ps1:83 char:14
++              New-AzSqlServer @_SecondarySqlServer;
++              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzSqlServer], ArgumentException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Server.Cmdlet.NewAzureSqlServer
+
+^. {
+>> . {
+Set-Location -Path "C:\GroupBy\Demo\HA&DR"
+.\Manage-ActiveGeoReplication.ps1 -ResourceGroup demo -PrimarySQLServer aoazsqlserver -Username aosama -Password Awesome@1234 -SecondarySQLServer aoazsqlserversecondary -SecondaryServerLocation eastus2 -DatabasesToReplicate aostackoverflow2010 -Operation "Enable" -AzureProfileFilePath "C:\GroupBy\MyAzureProfile.json" -Failover $False
+}
+Transcript started, output file is .\Log\Manage-ActiveGeoReplication.txt
+Set-AzContext : Please provide a valid tenant or a valid subscription.
+At C:\GroupBy\Demo\HA&DR\Manage-ActiveGeoReplication.ps1:60 char:1
++ Set-AzContext -SubscriptionId $SubscriptionID | Out-Null
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Set-AzContext], ArgumentException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Profile.SetAzureRMContextCommand
+Set-AzContext : Please provide a valid tenant or a valid subscription.
+At C:\GroupBy\Demo\HA&DR\Manage-ActiveGeoReplication.ps1:60 char:1
++ Set-AzContext -SubscriptionId $SubscriptionID | Out-Null
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Set-AzContext], ArgumentException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Profile.SetAzureRMContextCommand
+
+Provisioning Azure SQL Server aoazsqlserversecondary
+New-AzSqlServer : Your Azure credentials have not been set up or have expired, please run Connect-AzAccount to set up 
+your Azure credentials.
+At C:\GroupBy\Demo\HA&DR\Manage-ActiveGeoReplication.ps1:83 char:14
++              New-AzSqlServer @_SecondarySqlServer;
++              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzSqlServer], ArgumentException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Server.Cmdlet.NewAzureSqlServer
+New-AzSqlServer : Your Azure credentials have not been set up or have expired, please run Connect-AzAccount to set up
+your Azure credentials.
+At C:\GroupBy\Demo\HA&DR\Manage-ActiveGeoReplication.ps1:83 char:14
++              New-AzSqlServer @_SecondarySqlServer;
++              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzSqlServer], ArgumentException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Server.Cmdlet.NewAzureSqlServer
+
+^. {
+>> . {
+Set-Location -Path "C:\GroupBy\Demo\HA&DR"
+.\Manage-ActiveGeoReplication.ps1 -ResourceGroup demo
+-PrimarySQLServer aoazsqlserver `
+-Username aosama `
+-Password Awesome@1234`
+-SecondarySQLServer aoazsqlserversecondary`
+-SecondaryServerLocation eastus2`
+-DatabasesToReplicate aostackoverflow2010`
+-Operation "Enable"`
+-AzureProfileFilePath "C:\GroupBy\MyAzureProfile.json"`
+-Failover $False
+}
+^TerminatingError(Manage-ActiveGeoReplication.ps1): "Cannot process command because of one or more missing mandatory parameters: PrimarySqlServer UserName Password SecondarySqlServer SecondaryServerLocation."
+C:\GroupBy\Demo\HA&DR\Manage-ActiveGeoReplication.ps1 : Cannot process command because of one or more missing mandatory 
+parameters: PrimarySqlServer UserName Password SecondarySqlServer SecondaryServerLocation.
+At line:3 char:1
++ .\Manage-ActiveGeoReplication.ps1 -ResourceGroup demo
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Manage-ActiveGeoReplication.ps1], ParameterBindingException
+    + FullyQualifiedErrorId : MissingMandatoryParameter,Manage-ActiveGeoReplication.ps1
+C:\GroupBy\Demo\HA&DR\Manage-ActiveGeoReplication.ps1 : Cannot process command because of one or more missing
+mandatory parameters: PrimarySqlServer UserName Password SecondarySqlServer SecondaryServerLocation.
+At line:3 char:1
++ .\Manage-ActiveGeoReplication.ps1 -ResourceGroup demo
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Manage-ActiveGeoReplication.ps1], ParameterBindingException
+    + FullyQualifiedErrorId : MissingMandatoryParameter,Manage-ActiveGeoReplication.ps1
+
+-PrimarySQLServer : The term '-PrimarySQLServer' is not recognized as the name of a cmdlet, function, script file, or 
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try 
+again.
+At line:4 char:1
++ -PrimarySQLServer aoazsqlserver `
++ ~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-PrimarySQLServer:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+-PrimarySQLServer : The term '-PrimarySQLServer' is not recognized as the name of a cmdlet, function, script file, or
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try
+again.
+At line:4 char:1
++ -PrimarySQLServer aoazsqlserver `
++ ~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-PrimarySQLServer:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+^. {
+>> . {
+Set-Location -Path "C:\GroupBy\Demo\HA&DR"
+.\Manage-ActiveGeoReplication.ps1 -ResourceGroup demo
+-PrimarySQLServer aoazsqlserver `
+-Username aosama `
+-Password Awesome@1234`
+-SecondarySQLServer aoazsqlserversecondary`
+-SecondaryServerLocation eastus2`
+-DatabasesToReplicate aostackoverflow2010`
+-Operation "Enable"`
+-AzureProfileFilePath "C:\GroupBy\MyAzureProfile.json"`
+-Failover $False
+}
+^TerminatingError(Manage-ActiveGeoReplication.ps1): "Cannot process command because of one or more missing mandatory parameters: PrimarySqlServer UserName Password SecondarySqlServer SecondaryServerLocation."
+C:\GroupBy\Demo\HA&DR\Manage-ActiveGeoReplication.ps1 : Cannot process command because of one or more missing mandatory 
+parameters: PrimarySqlServer UserName Password SecondarySqlServer SecondaryServerLocation.
+At line:3 char:1
++ .\Manage-ActiveGeoReplication.ps1 -ResourceGroup demo
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Manage-ActiveGeoReplication.ps1], ParameterBindingException
+    + FullyQualifiedErrorId : MissingMandatoryParameter,Manage-ActiveGeoReplication.ps1
+C:\GroupBy\Demo\HA&DR\Manage-ActiveGeoReplication.ps1 : Cannot process command because of one or more missing
+mandatory parameters: PrimarySqlServer UserName Password SecondarySqlServer SecondaryServerLocation.
+At line:3 char:1
++ .\Manage-ActiveGeoReplication.ps1 -ResourceGroup demo
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Manage-ActiveGeoReplication.ps1], ParameterBindingException
+    + FullyQualifiedErrorId : MissingMandatoryParameter,Manage-ActiveGeoReplication.ps1
+
+-PrimarySQLServer : The term '-PrimarySQLServer' is not recognized as the name of a cmdlet, function, script file, or 
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try 
+again.
+At line:4 char:1
++ -PrimarySQLServer aoazsqlserver `
++ ~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-PrimarySQLServer:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+-PrimarySQLServer : The term '-PrimarySQLServer' is not recognized as the name of a cmdlet, function, script file, or
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try
+again.
+At line:4 char:1
++ -PrimarySQLServer aoazsqlserver `
++ ~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-PrimarySQLServer:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+^. {
+>> . {
+Set-Location -Path "C:\GroupBy\Demo\HA&DR"
+.\Manage-ActiveGeoReplication.ps1 -ResourceGroup demo
+-PrimarySQLServer aoazsqlserver `
+-Username aosama `
+-Password Awesome@1234 `
+-SecondarySQLServer aoazsqlserversecondary `
+-SecondaryServerLocation eastus2 `
+-DatabasesToReplicate aostackoverflow2010 `
+-Operation "Enable" `
+-AzureProfileFilePath "C:\GroupBy\MyAzureProfile.json" `
+-Failover $False
+}
+^TerminatingError(Manage-ActiveGeoReplication.ps1): "Cannot process command because of one or more missing mandatory parameters: PrimarySqlServer UserName Password SecondarySqlServer SecondaryServerLocation."
+C:\GroupBy\Demo\HA&DR\Manage-ActiveGeoReplication.ps1 : Cannot process command because of one or more missing mandatory 
+parameters: PrimarySqlServer UserName Password SecondarySqlServer SecondaryServerLocation.
+At line:3 char:1
++ .\Manage-ActiveGeoReplication.ps1 -ResourceGroup demo
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Manage-ActiveGeoReplication.ps1], ParameterBindingException
+    + FullyQualifiedErrorId : MissingMandatoryParameter,Manage-ActiveGeoReplication.ps1
+C:\GroupBy\Demo\HA&DR\Manage-ActiveGeoReplication.ps1 : Cannot process command because of one or more missing
+mandatory parameters: PrimarySqlServer UserName Password SecondarySqlServer SecondaryServerLocation.
+At line:3 char:1
++ .\Manage-ActiveGeoReplication.ps1 -ResourceGroup demo
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Manage-ActiveGeoReplication.ps1], ParameterBindingException
+    + FullyQualifiedErrorId : MissingMandatoryParameter,Manage-ActiveGeoReplication.ps1
+
+-PrimarySQLServer : The term '-PrimarySQLServer' is not recognized as the name of a cmdlet, function, script file, or 
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try 
+again.
+At line:4 char:1
++ -PrimarySQLServer aoazsqlserver `
++ ~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-PrimarySQLServer:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+-PrimarySQLServer : The term '-PrimarySQLServer' is not recognized as the name of a cmdlet, function, script file, or
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try
+again.
+At line:4 char:1
++ -PrimarySQLServer aoazsqlserver `
++ ~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-PrimarySQLServer:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+^. {
+>> . {
+Set-Location -Path "C:\GroupBy\Demo\HA&DR"
+.\Manage-ActiveGeoReplication.ps1 -ResourceGroup demo `
+-PrimarySQLServer aoazsqlserver `
+-Username aosama `
+-Password Awesome@1234 `
+-SecondarySQLServer aoazsqlserversecondary `
+-SecondaryServerLocation eastus2 `
+-DatabasesToReplicate aostackoverflow2010 `
+-Operation "Enable" `
+-AzureProfileFilePath "C:\GroupBy\MyAzureProfile.json" `
+-Failover $False
+}
+Transcript started, output file is .\Log\Manage-ActiveGeoReplication.txt
+b85b0984-a391-4f22-a832-fb6e46c39f38
+Provisioning Azure SQL Server aoazsqlserversecondary
+
+
+ResourceGroupName        : demo
+ServerName               : aoazsqlserversecondary
+Location                 : eastus2
+SqlAdministratorLogin    : aosama
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+Identity                 :
+FullyQualifiedDomainName : aoazsqlserversecondary.database.windows.net
+ResourceId               : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.
+                           Sql/servers/aoazsqlserversecondary
+MinimalTlsVersion        :
+PublicNetworkAccess      : Enabled
+
+
+
+^. {
+>> . {
+Set-Location -Path "C:\GroupBy\Demo\HA&DR"
+.\Manage-ActiveGeoReplication.ps1 -ResourceGroup demo`
+-PrimarySQLServer aoazsqlserver`
+-Username aosama`
+-Password Awesome@1234`
+-SecondarySQLServer aoazsqlserversecondary`
+-SecondaryServerLocation eastus2`
+-DatabasesToReplicate aostackoverflow2010`
+-Operation "Enable"`
+-AzureProfileFilePath "C:\GroupBy\MyAzureProfile.json"`
+-Failover $False
+}
+Transcript started, output file is .\Log\Manage-ActiveGeoReplication.txt
+b85b0984-a391-4f22-a832-fb6e46c39f38
+Provisioning Azure SQL Server aoazsqlserversecondary
+-SecondaryServerLocation
+New-AzSqlServer : Operation returned an invalid status code 'BadRequest'
+At C:\GroupBy\Demo\HA&DR\Manage-ActiveGeoReplication.ps1:85 char:14
++              New-AzSqlServer @_SecondarySqlServer;
++              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzSqlServer], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Server.Cmdlet.NewAzureSqlServer
+New-AzSqlServer : Operation returned an invalid status code 'BadRequest'
+At C:\GroupBy\Demo\HA&DR\Manage-ActiveGeoReplication.ps1:85 char:14
++              New-AzSqlServer @_SecondarySqlServer;
++              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzSqlServer], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Server.Cmdlet.NewAzureSqlServer
+
+^. {
+>> . {
+Set-Location -Path "C:\GroupBy\Demo\HA&DR"
+.\Manage-ActiveGeoReplication.ps1 -ResourceGroup demo`
+-PrimarySQLServer aoazsqlserver`
+-Username aosama`
+-Password Awesome@1234`
+-SecondarySQLServer aoazsqlserversecondary`
+-SecondaryServerLocation eastus2`
+-DatabasesToReplicate aostackoverflow2010`
+-Operation "Enable"`
+-AzureProfileFilePath "C:\GroupBy\MyAzureProfile.json"`
+-Failover $False
+}
+Transcript started, output file is .\Log\Manage-ActiveGeoReplication.txt
+Provisioning Azure SQL Server aoazsqlserversecondary
+-SecondaryServerLocation
+New-AzSqlServer : Operation returned an invalid status code 'BadRequest'
+At C:\GroupBy\Demo\HA&DR\Manage-ActiveGeoReplication.ps1:85 char:14
++              New-AzSqlServer @_SecondarySqlServer;
++              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzSqlServer], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Server.Cmdlet.NewAzureSqlServer
+New-AzSqlServer : Operation returned an invalid status code 'BadRequest'
+At C:\GroupBy\Demo\HA&DR\Manage-ActiveGeoReplication.ps1:85 char:14
++              New-AzSqlServer @_SecondarySqlServer;
++              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzSqlServer], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Server.Cmdlet.NewAzureSqlServer
+
+Replicating database aostackoverflow2010
+-Operation to aoazsqlserversecondary
+-SecondaryServerLocation
+Get-AzSqlDatabase : Operation returned an invalid status code 'BadRequest'
+At C:\GroupBy\Demo\HA&DR\Manage-ActiveGeoReplication.ps1:106 char:21
++ ... $database = Get-AzSqlDatabase -DatabaseName $db -ResourceGroupName $R ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzSqlDatabase], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Database.Cmdlet.GetAzureSqlDatabase
+Get-AzSqlDatabase : Operation returned an invalid status code 'BadRequest'
+At C:\GroupBy\Demo\HA&DR\Manage-ActiveGeoReplication.ps1:106 char:21
++ ... $database = Get-AzSqlDatabase -DatabaseName $db -ResourceGroupName $R ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzSqlDatabase], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Database.Cmdlet.GetAzureSqlDatabase
+
+^. {
+>> . {
+Set-Location -Path "C:\GroupBy\Demo\HA&DR"
+.\Manage-ActiveGeoReplication.ps1 -ResourceGroup demo`
+-PrimarySQLServer aoazsqlserver`
+-Username aosama`
+-Password Awesome@1234`
+-SecondarySQLServer aoazsqlserversecondary`
+-SecondaryServerLocation eastus2`
+-DatabasesToReplicate aostackoverflow2010`
+-Operation "Enable"`
+-AzureProfileFilePath "C:\GroupBy\MyAzureProfile.json"`
+-Failover $False
+}
+Transcript started, output file is .\Log\Manage-ActiveGeoReplication.txt
+Provisioning Azure SQL Server aoazsqlserversecondary
+-SecondaryServerLocation
+New-AzSqlServer : Operation returned an invalid status code 'BadRequest'
+At C:\GroupBy\Demo\HA&DR\Manage-ActiveGeoReplication.ps1:85 char:14
++              New-AzSqlServer @_SecondarySqlServer;
++              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzSqlServer], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Server.Cmdlet.NewAzureSqlServer
+New-AzSqlServer : Operation returned an invalid status code 'BadRequest'
+At C:\GroupBy\Demo\HA&DR\Manage-ActiveGeoReplication.ps1:85 char:14
++              New-AzSqlServer @_SecondarySqlServer;
++              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzSqlServer], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Server.Cmdlet.NewAzureSqlServer
+
+Replicating database aostackoverflow2010
+-Operation to aoazsqlserversecondary
+-SecondaryServerLocation
+Get-AzSqlDatabase : Operation returned an invalid status code 'BadRequest'
+At C:\GroupBy\Demo\HA&DR\Manage-ActiveGeoReplication.ps1:106 char:21
++ ... $database = Get-AzSqlDatabase -DatabaseName $db -ResourceGroupName $R ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzSqlDatabase], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Database.Cmdlet.GetAzureSqlDatabase
+Get-AzSqlDatabase : Operation returned an invalid status code 'BadRequest'
+At C:\GroupBy\Demo\HA&DR\Manage-ActiveGeoReplication.ps1:106 char:21
++ ... $database = Get-AzSqlDatabase -DatabaseName $db -ResourceGroupName $R ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzSqlDatabase], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Database.Cmdlet.GetAzureSqlDatabase
+
+^. {
+>> . {
+Set-Location -Path "C:\GroupBy\Demo\HA&DR"
+.\Manage-ActiveGeoReplication.ps1 -ResourceGroup demo`
+-PrimarySQLServer aoazsqlserver`
+-Username aosama`
+-Password Awesome@1234`
+-SecondarySQLServer aoazsqlserversecondary`
+-SecondaryServerLocation eastus2`
+-DatabasesToReplicate aostackoverflow2010`
+-Operation "Enable"`
+-AzureProfileFilePath "C:\GroupBy\MyAzureProfile.json"`
+-Failover $False
+}
+Transcript started, output file is .\Log\Manage-ActiveGeoReplication.txt
+Provisioning Azure SQL Server aoazsqlserversecondary
+-SecondaryServerLocation
+New-AzSqlServer : Operation returned an invalid status code 'BadRequest'
+At C:\GroupBy\Demo\HA&DR\Manage-ActiveGeoReplication.ps1:85 char:14
++              New-AzSqlServer @_SecondarySqlServer;
++              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzSqlServer], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Server.Cmdlet.NewAzureSqlServer
+New-AzSqlServer : Operation returned an invalid status code 'BadRequest'
+At C:\GroupBy\Demo\HA&DR\Manage-ActiveGeoReplication.ps1:85 char:14
++              New-AzSqlServer @_SecondarySqlServer;
++              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzSqlServer], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Server.Cmdlet.NewAzureSqlServer
+
+Replicating database aostackoverflow2010
+-Operation to aoazsqlserversecondary
+-SecondaryServerLocation
+Get-AzSqlDatabase : Operation returned an invalid status code 'BadRequest'
+At C:\GroupBy\Demo\HA&DR\Manage-ActiveGeoReplication.ps1:106 char:21
++ ... $database = Get-AzSqlDatabase -DatabaseName $db -ResourceGroupName $R ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzSqlDatabase], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Database.Cmdlet.GetAzureSqlDatabase
+Get-AzSqlDatabase : Operation returned an invalid status code 'BadRequest'
+At C:\GroupBy\Demo\HA&DR\Manage-ActiveGeoReplication.ps1:106 char:21
++ ... $database = Get-AzSqlDatabase -DatabaseName $db -ResourceGroupName $R ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzSqlDatabase], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Database.Cmdlet.GetAzureSqlDatabase
+
+^$global:?
+True
+**********************
+Windows PowerShell transcript end
+End time: 20201028034538
+**********************

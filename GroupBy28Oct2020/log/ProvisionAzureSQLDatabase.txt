@@ -1,0 +1,589 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20201019211507
+Username: NEPTUNE\Surface
+RunAs User: NEPTUNE\Surface
+Configuration Name: 
+Machine: NEPTUNE (Microsoft Windows NT 10.0.19041.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\Surface\.vscode\extensions\ms-vscode.powershell-2020.6.0\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2020.6.0' -AdditionalModules @('PowerShellEditorServices.VSCode') -BundledModulesPath 'c:\Users\Surface\.vscode\extensions\ms-vscode.powershell-2020.6.0\modules' -EnableConsoleRepl -StartupBanner "=====> PowerShell Integrated Console v2020.6.0 <=====
+" -LogLevel 'Normal' -LogPath 'c:\Users\Surface\.vscode\extensions\ms-vscode.powershell-2020.6.0\logs\1603121761-2b8dcfb0-da03-4fb3-9659-b69d38ddd7211603121759740\EditorServices.log' -SessionDetailsPath 'c:\Users\Surface\.vscode\extensions\ms-vscode.powershell-2020.6.0\sessions\PSES-VSCode-14296-254055' -FeatureFlags @() 
+Process ID: 13404
+PSVersion: 5.1.19041.546
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.546
+BuildVersion: 10.0.19041.546
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is .\log\ProvisionAzureSQLDatabase.txt
+Import-AzContext : Cannot find file '.\MyAzureProfile.json'
+At C:\GroupBy\Scripts\ProvisionAzureSQLDatabase.ps1:38 char:18
++     $azprofile = Import-AzContext -Path $AzureProfileFilePath
++                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Import-AzContext], PSArgumentException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Profile.ImportAzureRMContextCommand
+Import-AzContext : Cannot find file '.\MyAzureProfile.json'
+At C:\GroupBy\Scripts\ProvisionAzureSQLDatabase.ps1:38 char:18
++     $azprofile = Import-AzContext -Path $AzureProfileFilePath
++                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Import-AzContext], PSArgumentException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Profile.ImportAzureRMContextCommand
+
+PS>TerminatingError(Set-AzContext): "Cannot validate argument on parameter 'Subscription'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+Set-AzContext : Cannot validate argument on parameter 'Subscription'. The argument is null or empty. Provide an 
+argument that is not null or empty, and then try the command again.
+At C:\GroupBy\Scripts\ProvisionAzureSQLDatabase.ps1:53 char:31
++ Set-AzContext -SubscriptionId $SubscriptionID | Out-Null
++                               ~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Set-AzContext], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.Azure.Commands.Profile.SetAzureRMContextCommand
+Set-AzContext : Cannot validate argument on parameter 'Subscription'. The argument is null or empty. Provide an argument that is not null or empty, and then try the
+command again.
+At C:\GroupBy\Scripts\ProvisionAzureSQLDatabase.ps1:53 char:31
++ Set-AzContext -SubscriptionId $SubscriptionID | Out-Null
++                               ~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Set-AzContext], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.Azure.Commands.Profile.SetAzureRMContextCommand
+
+
+
+ResourceGroupName : Demo
+Location          : southeastasia
+ProvisioningState : Succeeded
+Tags              :
+ResourceId        : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/Demo
+
+
+Provisioning Azure SQL Server aosqlserver1
+**********************
+Windows PowerShell transcript start
+Start time: 20201019211934
+Username: NEPTUNE\Surface
+RunAs User: NEPTUNE\Surface
+Configuration Name: 
+Machine: NEPTUNE (Microsoft Windows NT 10.0.19041.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\Surface\.vscode\extensions\ms-vscode.powershell-2020.6.0\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2020.6.0' -AdditionalModules @('PowerShellEditorServices.VSCode') -BundledModulesPath 'c:\Users\Surface\.vscode\extensions\ms-vscode.powershell-2020.6.0\modules' -EnableConsoleRepl -StartupBanner "=====> PowerShell Integrated Console v2020.6.0 <=====
+" -LogLevel 'Normal' -LogPath 'c:\Users\Surface\.vscode\extensions\ms-vscode.powershell-2020.6.0\logs\1603122411-2b8dcfb0-da03-4fb3-9659-b69d38ddd7211603121759740\EditorServices.log' -SessionDetailsPath 'c:\Users\Surface\.vscode\extensions\ms-vscode.powershell-2020.6.0\sessions\PSES-VSCode-14296-701504' -FeatureFlags @() 
+Process ID: 14792
+PSVersion: 5.1.19041.546
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.546
+BuildVersion: 10.0.19041.546
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is .\log\ProvisionAzureSQLDatabase.txt
+
+
+ResourceGroupName : Demo
+Location          : southeastasia
+ProvisioningState : Succeeded
+Tags              :
+ResourceId        : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/Demo
+
+
+Provisioning Azure SQL Server aosqlserver1
+
+ResourceGroupName        : Demo
+ServerName               : aosqlserver1
+Location                 : southeastasia
+SqlAdministratorLogin    : aosama
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+Identity                 :
+FullyQualifiedDomainName : aosqlserver1.database.windows.net
+ResourceId               : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/Demo/providers/Microsoft.Sql/servers/aosqlserver1
+MinimalTlsVersion        :
+PublicNetworkAccess      : Enabled
+
+Provisioning Azure SQL Database aodbtest
+You have not specified the value for backup storage redundancy which will default to geo-redundant storage. Note that database backups will be geo-replicated to the paired region. To learn more about Azure Paired Regions visit https://docs.microsoft.com/en-us/azure/best-practices-availability-paired-regions.
+Do you want to proceed?
+&Yes  &No  &Suspend
+N
+Creating firewall rule for  with StartIP: 103.211.53.235 and EndIP: 103.211.53.235
+
+ResourceGroupName : Demo
+ServerName        : aosqlserver1
+StartIpAddress    : 103.211.53.235
+EndIpAddress      : 103.211.53.235
+FirewallRuleName  : PacktPub_20201019211056
+
+
+
+PS>@{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+processId                      14792
+computerName                   NEPTUNE
+instanceId                     946daab9-387c-42fe-b0f1-fbdfc0ab9813
+
+
+PS C:\GroupBy> .\Scripts\ProvisionAzureSQLDatabase.ps1 -ResourceGroup Demo -Location southeastasia -SQLServer aosqlserver1 -UserName aosama -Password Awesome@1234 -SQLDatabase aodbtest -Edition basic -AzureProfileFilePath C:\GroupBy\MyAzureProfile.json
+.\Scripts\ProvisionAzureSQLDatabase.ps1 : The term '.\Scripts\ProvisionAzureSQLDatabase.ps1' is not recognized as the 
+name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was 
+included, verify that the path is correct and try again.
+At line:1 char:1
++ .\Scripts\ProvisionAzureSQLDatabase.ps1 -ResourceGroup Demo -Location ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (.\Scripts\ProvisionAzureSQLDatabase.ps1:String) [], 
+CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+.\Scripts\ProvisionAzureSQLDatabase.ps1 : The term '.\Scripts\ProvisionAzureSQLDatabase.ps1' is not recognized as the name of a cmdlet, function, script file, or
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ .\Scripts\ProvisionAzureSQLDatabase.ps1 -ResourceGroup Demo -Location ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (.\Scripts\ProvisionAzureSQLDatabase.ps1:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\GroupBy> @{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+processId                      14792
+computerName                   NEPTUNE
+instanceId                     946daab9-387c-42fe-b0f1-fbdfc0ab9813
+
+
+PS C:\GroupBy> .\Demo\1_ProvisionAzureSQLDatabase.ps1 -ResourceGroup Demo -Location southeastasia -SQLServer aosqlserver1 -UserName aosama -Password Awesome@1234 -SQLDatabase aodbtest -Edition basic -AzureProfileFilePath C:\GroupBy\MyAzureProfile.json
+Transcript started, output file is .\log\ProvisionAzureSQLDatabase.txt
+
+
+ResourceGroupName : Demo
+Location          : southeastasia
+ProvisioningState : Succeeded
+Tags              :
+ResourceId        : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/Demo
+
+
+Provisioning Azure SQL Server aosqlserver1
+
+ResourceGroupName        : Demo
+ServerName               : aosqlserver1
+Location                 : southeastasia
+SqlAdministratorLogin    : aosama
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+Identity                 :
+FullyQualifiedDomainName : aosqlserver1.database.windows.net
+ResourceId               : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/Demo/providers/Microsoft.Sql/servers/aosqlserver1
+MinimalTlsVersion        :
+PublicNetworkAccess      : Enabled
+
+Provisioning Azure SQL Database aodbtest
+PS C:\GroupBy> TerminatingError(New-AzSqlDatabase): "Cannot validate argument on parameter 'BackupStorageRedundancy'. The argument "local" does not belong to the set "Local,Zone,Geo" specified by the ValidateSet attribute. Supply an argument that is in the set and then try the command again."
+New-AzSqlDatabase : Cannot validate argument on parameter 'BackupStorageRedundancy'. The argument "local" does not 
+belong to the set "Local,Zone,Geo" specified by the ValidateSet attribute. Supply an argument that is in the set and 
+then try the command again.
+At C:\GroupBy\Demo\1_ProvisionAzureSQLDatabase.ps1:156 char:19
++ New-AzSqlDatabase @_SqlDatabase;
++                   ~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzSqlDatabase], ParameterBindingValidationException
+    + FullyQualifiedErrorId : 
+ParameterArgumentValidationError,Microsoft.Azure.Commands.Sql.Database.Cmdlet.NewAzureSqlDatabase
+New-AzSqlDatabase : Cannot validate argument on parameter 'BackupStorageRedundancy'. The argument "local" does not belong to the set "Local,Zone,Geo" specified by
+the ValidateSet attribute. Supply an argument that is in the set and then try the command again.
+At C:\GroupBy\Demo\1_ProvisionAzureSQLDatabase.ps1:156 char:19
++ New-AzSqlDatabase @_SqlDatabase;
++                   ~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzSqlDatabase], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.Azure.Commands.Sql.Database.Cmdlet.NewAzureSqlDatabase
+
+Creating firewall rule for  with StartIP: 103.211.53.235 and EndIP: 103.211.53.235
+
+ResourceGroupName : Demo
+ServerName        : aosqlserver1
+StartIpAddress    : 103.211.53.235
+EndIpAddress      : 103.211.53.235
+FirewallRuleName  : PacktPub_20201019211038
+
+
+
+PS C:\GroupBy> @{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+processId                      14792
+computerName                   NEPTUNE
+instanceId                     946daab9-387c-42fe-b0f1-fbdfc0ab9813
+
+
+PS C:\GroupBy> .\Demo\1_ProvisionAzureSQLDatabase.ps1 -ResourceGroup Demo -Location southeastasia -SQLServer aosqlserver1 -UserName aosama -Password Awesome@1234 -SQLDatabase aodbtest -Edition basic -AzureProfileFilePath C:\GroupBy\MyAzureProfile.json
+Transcript started, output file is .\log\ProvisionAzureSQLDatabase.txt
+
+
+ResourceGroupName : Demo
+Location          : southeastasia
+ProvisioningState : Succeeded
+Tags              :
+ResourceId        : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/Demo
+
+
+
+ResourceGroupName        : Demo
+ServerName               : aosqlserver1
+Location                 : southeastasia
+SqlAdministratorLogin    : aosama
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+Identity                 :
+FullyQualifiedDomainName : aosqlserver1.database.windows.net
+ResourceId               : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/Demo/providers/Microsoft.Sql/servers/aosqlserver1
+MinimalTlsVersion        :
+PublicNetworkAccess      : Enabled
+
+
+Provisioning Azure SQL Database aodbtest
+PS C:\GroupBy> TerminatingError(New-AzSqlDatabase): "Parameter set cannot be resolved using the specified named parameters."
+New-AzSqlDatabase : Parameter set cannot be resolved using the specified named parameters.
+At C:\GroupBy\Demo\1_ProvisionAzureSQLDatabase.ps1:156 char:1
++ New-AzSqlDatabase @_SqlDatabase;
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [New-AzSqlDatabase], ParameterBindingException
+    + FullyQualifiedErrorId : AmbiguousParameterSet,Microsoft.Azure.Commands.Sql.Database.Cmdlet.NewAzureSqlDatabase
+New-AzSqlDatabase : Parameter set cannot be resolved using the specified named parameters.
+At C:\GroupBy\Demo\1_ProvisionAzureSQLDatabase.ps1:156 char:1
++ New-AzSqlDatabase @_SqlDatabase;
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [New-AzSqlDatabase], ParameterBindingException
+    + FullyQualifiedErrorId : AmbiguousParameterSet,Microsoft.Azure.Commands.Sql.Database.Cmdlet.NewAzureSqlDatabase
+
+Creating firewall rule for  with StartIP: 103.211.53.235 and EndIP: 103.211.53.235
+
+ResourceGroupName : Demo
+ServerName        : aosqlserver1
+StartIpAddress    : 103.211.53.235
+EndIpAddress      : 103.211.53.235
+FirewallRuleName  : PacktPub_20201019211010
+
+
+
+PS C:\GroupBy> @{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+processId                      14792
+computerName                   NEPTUNE
+instanceId                     946daab9-387c-42fe-b0f1-fbdfc0ab9813
+
+
+PS C:\GroupBy> .\Demo\1_ProvisionAzureSQLDatabase.ps1 -ResourceGroup Demo -Location southeastasia -SQLServer aosqlserver1 -UserName aosama -Password Awesome@1234 -SQLDatabase aodbtest -Edition basic -AzureProfileFilePath C:\GroupBy\MyAzureProfile.json
+Transcript started, output file is .\log\ProvisionAzureSQLDatabase.txt
+
+
+ResourceGroupName : Demo
+Location          : southeastasia
+ProvisioningState : Succeeded
+Tags              :
+ResourceId        : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/Demo
+
+
+Provisioning Azure SQL Server aosqlserver1
+
+ResourceGroupName        : Demo
+ServerName               : aosqlserver1
+Location                 : southeastasia
+SqlAdministratorLogin    : aosama
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+Identity                 :
+FullyQualifiedDomainName : aosqlserver1.database.windows.net
+ResourceId               : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/Demo/providers/Microsoft.Sql/servers/aosqlserver1
+MinimalTlsVersion        :
+PublicNetworkAccess      : Enabled
+
+Provisioning Azure SQL Database aodbtest
+PS C:\GroupBy> TerminatingError(New-AzSqlDatabase): "Parameter set cannot be resolved using the specified named parameters."
+New-AzSqlDatabase : Parameter set cannot be resolved using the specified named parameters.
+At C:\GroupBy\Demo\1_ProvisionAzureSQLDatabase.ps1:156 char:1
++ New-AzSqlDatabase @_SqlDatabase;
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [New-AzSqlDatabase], ParameterBindingException
+    + FullyQualifiedErrorId : AmbiguousParameterSet,Microsoft.Azure.Commands.Sql.Database.Cmdlet.NewAzureSqlDatabase
+New-AzSqlDatabase : Parameter set cannot be resolved using the specified named parameters.
+At C:\GroupBy\Demo\1_ProvisionAzureSQLDatabase.ps1:156 char:1
++ New-AzSqlDatabase @_SqlDatabase;
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [New-AzSqlDatabase], ParameterBindingException
+    + FullyQualifiedErrorId : AmbiguousParameterSet,Microsoft.Azure.Commands.Sql.Database.Cmdlet.NewAzureSqlDatabase
+
+Creating firewall rule for  with StartIP: 103.211.53.235 and EndIP: 103.211.53.235
+
+ResourceGroupName : Demo
+ServerName        : aosqlserver1
+StartIpAddress    : 103.211.53.235
+EndIpAddress      : 103.211.53.235
+FirewallRuleName  : PacktPub_20201019211010
+
+
+
+PS C:\GroupBy> @{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+processId                      14792
+computerName                   NEPTUNE
+instanceId                     946daab9-387c-42fe-b0f1-fbdfc0ab9813
+
+
+PS C:\GroupBy> .\Demo\1_ProvisionAzureSQLDatabase.ps1 -ResourceGroup Demo -Location southeastasia -SQLServer aosqlserver1 -UserName aosama -Password Awesome@1234 -SQLDatabase aodbtest -Edition basic -AzureProfileFilePath C:\GroupBy\MyAzureProfile.json
+Transcript started, output file is .\log\ProvisionAzureSQLDatabase.txt
+
+
+ResourceGroupName : Demo
+Location          : southeastasia
+ProvisioningState : Succeeded
+Tags              :
+ResourceId        : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/Demo
+
+
+
+ResourceGroupName        : Demo
+ServerName               : aosqlserver1
+Location                 : southeastasia
+SqlAdministratorLogin    : aosama
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+Identity                 :
+FullyQualifiedDomainName : aosqlserver1.database.windows.net
+ResourceId               : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/Demo/providers/Microsoft.Sql/servers/aosqlserver1
+MinimalTlsVersion        :
+PublicNetworkAccess      : Enabled
+
+
+Provisioning Azure SQL Database aodbtest
+
+ResourceGroupName             : Demo
+ServerName                    : aosqlserver1
+DatabaseName                  : aodbtest
+Location                      : southeastasia
+DatabaseId                    : 73038a1b-dd98-4211-9c83-e5da425bc196
+Edition                       : Basic
+CollationName                 : SQL_Latin1_General_CP1_CI_AS
+CatalogCollation              :
+MaxSizeBytes                  : 2147483648
+Status                        : Online
+CreationDate                  : 19-10-2020 16:08:15
+CurrentServiceObjectiveId     : 00000000-0000-0000-0000-000000000000
+CurrentServiceObjectiveName   : Basic
+RequestedServiceObjectiveName : Basic
+RequestedServiceObjectiveId   :
+ElasticPoolName               :
+EarliestRestoreDate           : 19-10-2020 16:38:15
+Tags                          :
+ResourceId                    : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/Demo/providers/Microsoft.Sql/servers/aosqlserver1/databases/aodbte
+                                st
+CreateMode                    :
+ReadScale                     : Disabled
+ZoneRedundant                 : False
+Capacity                      : 5
+Family                        :
+SkuName                       : Basic
+LicenseType                   :
+AutoPauseDelayInMinutes       :
+MinimumCapacity               :
+ReadReplicaCount              : 0
+BackupStorageRedundancy       : Local
+
+Creating firewall rule for  with StartIP: 103.211.53.235 and EndIP: 103.211.53.235
+
+ResourceGroupName : Demo
+ServerName        : aosqlserver1
+StartIpAddress    : 103.211.53.235
+EndIpAddress      : 103.211.53.235
+FirewallRuleName  : PacktPub_20201019211031
+
+
+
+PS C:\GroupBy> @{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+processId                      14792
+computerName                   NEPTUNE
+instanceId                     946daab9-387c-42fe-b0f1-fbdfc0ab9813
+
+
+PS C:\GroupBy> Get-AzSqlDatabase -DatabaseName aodbtest -ServerName aosqlserver1
+
+
+ResourceGroupName             : demo
+ServerName                    : aosqlserver1
+DatabaseName                  : aodbtest
+Location                      : southeastasia
+DatabaseId                    : 73038a1b-dd98-4211-9c83-e5da425bc196
+Edition                       : Basic
+CollationName                 : SQL_Latin1_General_CP1_CI_AS
+CatalogCollation              :
+MaxSizeBytes                  : 2147483648
+Status                        : Online
+CreationDate                  : 19-10-2020 16:08:15
+CurrentServiceObjectiveId     : 00000000-0000-0000-0000-000000000000
+CurrentServiceObjectiveName   : Basic
+RequestedServiceObjectiveName : Basic
+RequestedServiceObjectiveId   :
+ElasticPoolName               :
+EarliestRestoreDate           : 19-10-2020 16:38:15
+Tags                          :
+ResourceId                    : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.Sql/servers/aosqlserver1/databases/aodbte
+                                st
+CreateMode                    :
+ReadScale                     : Disabled
+ZoneRedundant                 : False
+Capacity                      : 5
+Family                        :
+SkuName                       : Basic
+LicenseType                   :
+AutoPauseDelayInMinutes       :
+MinimumCapacity               :
+ReadReplicaCount              : 0
+BackupStorageRedundancy       : Local
+
+
+
+PS C:\GroupBy> @{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+processId                      14792
+computerName                   NEPTUNE
+instanceId                     946daab9-387c-42fe-b0f1-fbdfc0ab9813
+
+
+PS C:\GroupBy> $a = Get-AzSqlDatabase -DatabaseName aodbtest -ServerName aosqlserver1
+Get-AzSqlDatabase : Resource group 'dmeo' could not be found.
+At line:1 char:6
++ $a = Get-AzSqlDatabase -DatabaseName aodbtest -ServerName aosqlserver ...
++      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzSqlDatabase], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Database.Cmdlet.GetAzureSqlDatabase
+Get-AzSqlDatabase : Resource group 'dmeo' could not be found.
+At line:1 char:6
++ $a = Get-AzSqlDatabase -DatabaseName aodbtest -ServerName aosqlserver ...
++      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzSqlDatabase], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Database.Cmdlet.GetAzureSqlDatabase
+
+PS C:\GroupBy> @{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+processId                      14792
+computerName                   NEPTUNE
+instanceId                     946daab9-387c-42fe-b0f1-fbdfc0ab9813
+
+
+PS C:\GroupBy> $a = Get-AzSqlDatabase -DatabaseName aodbtest -ServerName aosqlserver1 -ResourceGroupName Demp
+Get-AzSqlDatabase : Resource group 'Demp' could not be found.
+At line:1 char:6
++ $a = Get-AzSqlDatabase -DatabaseName aodbtest -ServerName aosqlserver ...
++      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzSqlDatabase], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Database.Cmdlet.GetAzureSqlDatabase
+Get-AzSqlDatabase : Resource group 'Demp' could not be found.
+At line:1 char:6
++ $a = Get-AzSqlDatabase -DatabaseName aodbtest -ServerName aosqlserver ...
++      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzSqlDatabase], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Database.Cmdlet.GetAzureSqlDatabase
+
+PS C:\GroupBy> @{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+processId                      14792
+computerName                   NEPTUNE
+instanceId                     946daab9-387c-42fe-b0f1-fbdfc0ab9813
+
+
+PS C:\GroupBy> $a = Get-AzSqlDatabase -DatabaseName aodbtest -ServerName aosqlserver1 -ResourceGroupName Demo
+PS C:\GroupBy> @{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+processId                      14792
+computerName                   NEPTUNE
+instanceId                     946daab9-387c-42fe-b0f1-fbdfc0ab9813
+
+
+PS C:\GroupBy> $a.computemodel
+PS C:\GroupBy> @{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+processId                      14792
+computerName                   NEPTUNE
+instanceId                     946daab9-387c-42fe-b0f1-fbdfc0ab9813
+
+
+PS C:\GroupBy> clear
+PS C:\GroupBy> @{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+processId                      14792
+computerName                   NEPTUNE
+instanceId                     946daab9-387c-42fe-b0f1-fbdfc0ab9813
+
+
+PS C:\GroupBy> Remove-AzSqlServer -ServerName aosqlserver1 -Force
+Remove-AzSqlServer : Resource group 'Demp' could not be found.
+At line:1 char:1
++ Remove-AzSqlServer -ServerName aosqlserver1 -Force
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Remove-AzSqlServer], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Server.Cmdlet.RemoveAzureSqlServer
+Remove-AzSqlServer : Resource group 'Demp' could not be found.
+At line:1 char:1
++ Remove-AzSqlServer -ServerName aosqlserver1 -Force
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Remove-AzSqlServer], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Server.Cmdlet.RemoveAzureSqlServer
+
+PS C:\GroupBy> @{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+processId                      14792
+computerName                   NEPTUNE
+instanceId                     946daab9-387c-42fe-b0f1-fbdfc0ab9813
+
+
+PS C:\GroupBy> Remove-AzSqlServer -ServerName aosqlserver1 -Force -ResourceGroupName Demo
+
+
+ResourceGroupName        : Demo
+ServerName               : aosqlserver1
+Location                 : southeastasia
+SqlAdministratorLogin    : aosama
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+Identity                 :
+FullyQualifiedDomainName : aosqlserver1.database.windows.net
+ResourceId               : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/Demo/providers/Microsoft.Sql/servers/aosqlserver1
+MinimalTlsVersion        :
+PublicNetworkAccess      : Enabled
+
+
+
+PS C:\GroupBy> @{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+processId                      14792
+computerName                   NEPTUNE
+instanceId                     946daab9-387c-42fe-b0f1-fbdfc0ab9813
+
+
