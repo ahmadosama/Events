@@ -2049,3 +2049,669 @@ Id                        : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/
 
 
 
+**********************
+Windows PowerShell transcript start
+Start time: 20201028055713
+Username: appvm\aosama
+RunAs User: appvm\aosama
+Configuration Name: 
+Machine: appvm (Microsoft Windows NT 10.0.17763.0)
+Host Application: powershell -noninteractive -noprofile -File -
+Process ID: 1316
+PSVersion: 5.1.17763.1007
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17763.1007
+BuildVersion: 10.0.17763.1007
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is .\log\PrivateEndpoint-SQLDB.txt
+
+
+Name                                : sqlprivateendpoint
+Type                                : Microsoft.Network/privateEndpoints
+Location                            : eastus
+ResourceGroupName                   : demo
+ProvisioningState                   : Succeeded
+Etag                                : W/"1f83ff81-bd5b-42f3-b7f9-04d4500ba6ef"
+Id                                  : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers
+                                      /Microsoft.Network/privateEndpoints/sqlprivateendpoint
+Subnet                              : {
+                                        "Id": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/
+                                      providers/Microsoft.Network/virtualNetworks/demo-vnet/subnets/appnet",
+                                        "IpAllocations": []
+                                      }
+NetworkInterfaces                   : [
+                                        {
+                                          "Id": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/dem
+                                      o/providers/Microsoft.Network/networkInterfaces/sqlprivateendpoint.nic.c3dc022d-d
+                                      99f-45b5-bc46-4fe80897df34"
+                                        }
+                                      ]
+PrivateLinkServiceConnections       : [
+                                        {
+                                          "ProvisioningState": "Succeeded",
+                                          "PrivateLinkServiceId": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/
+                                      resourceGroups/Demo/providers/Microsoft.Sql/servers/azsosqlserver",
+                                          "GroupIds": [
+                                            "sqlServer"
+                                          ],
+                                          "PrivateLinkServiceConnectionState": {
+                                            "Status": "Approved",
+                                            "Description": "Auto-approved",
+                                            "ActionRequired": "None"
+                                          },
+                                          "Name": "sqlprivateendpoint_connection",
+                                          "Etag": "W/\"1f83ff81-bd5b-42f3-b7f9-04d4500ba6ef\"",
+                                          "Id": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/dem
+                                      o/providers/Microsoft.Network/privateEndpoints/sqlprivateendpoint/privateLinkServ
+                                      iceConnections/sqlprivateendpoint_connection"
+                                        }
+                                      ]
+ManualPrivateLinkServiceConnections : []
+CustomDnsConfigs                    : [
+                                        {
+                                          "Fqdn": "azsosqlserver.database.windows.net",
+                                          "IpAddresses": [
+                                            "10.0.3.5"
+                                          ]
+                                        }
+                                      ]
+
+New-AzPrivateDnsZone : Long running operation failed with status 'Failed'. Additional Info:'The Zone 
+privatelink.database.windows.net exists already and hence cannot be created again.'
+At C:\Events\GroupBy28Oct2020\Demo\Security\PrivateEndpoint-SQLDB.ps1:80 char:12
++ $dnszone = New-AzPrivateDnsZone -ResourceGroupName $resourcegroup `
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsZone], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.PrivateDns.Zones.NewAzurePrivateDnsZone
+New-AzPrivateDnsZone : Long running operation failed with status 'Failed'. Additional Info:'The Zone
+privatelink.database.windows.net exists already and hence cannot be created again.'
+At C:\Events\GroupBy28Oct2020\Demo\Security\PrivateEndpoint-SQLDB.ps1:80 char:12
++ $dnszone = New-AzPrivateDnsZone -ResourceGroupName $resourcegroup `
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsZone], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.PrivateDns.Zones.NewAzurePrivateDnsZone
+
+New-AzPrivateDnsVirtualNetworkLink : Long running operation failed with status 'Failed'. Additional Info:'The Virtual 
+Network link vnetdnszonelink for the Private DNS zone privatelink.database.windows.net exists already and hence cannot 
+be created again.'
+At C:\Events\GroupBy28Oct2020\Demo\Security\PrivateEndpoint-SQLDB.ps1:84 char:1
++ New-AzPrivateDnsVirtualNetworkLink -ResourceGroupName $resourcegroup  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsVirtualNetworkLink], CloudException
+    + FullyQualifiedErrorId : 
+Microsoft.Azure.Commands.PrivateDns.VirtualNetworkLinks.NewAzurePrivateDnsVirtualNetworkLink
+New-AzPrivateDnsVirtualNetworkLink : Long running operation failed with status 'Failed'. Additional Info:'The Virtual
+Network link vnetdnszonelink for the Private DNS zone privatelink.database.windows.net exists already and hence cannot
+be created again.'
+At C:\Events\GroupBy28Oct2020\Demo\Security\PrivateEndpoint-SQLDB.ps1:84 char:1
++ New-AzPrivateDnsVirtualNetworkLink -ResourceGroupName $resourcegroup  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzPrivateDnsVirtualNetworkLink], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.PrivateDns.VirtualNetworkLinks.NewAzurePrivateDnsVirtualNetwork
+   Link
+
+^TerminatingError(New-AzPrivateDnsZoneConfig): "Cannot validate argument on parameter 'PrivateDnsZoneId'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+New-AzPrivateDnsZoneConfig : Cannot validate argument on parameter 'PrivateDnsZoneId'. The argument is null or empty. 
+Provide an argument that is not null or empty, and then try the command again.
+At C:\Events\GroupBy28Oct2020\Demo\Security\PrivateEndpoint-SQLDB.ps1:90 char:97
++ ... ivatelink.database.windows.net" -PrivateDnsZoneId $dnszone.ResourceId
++                                                       ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneConfig], ParameterBindingValidationException
+    + FullyQualifiedErrorId : 
+ParameterArgumentValidationError,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneConfigCommand
+New-AzPrivateDnsZoneConfig : Cannot validate argument on parameter 'PrivateDnsZoneId'. The argument is null or empty.
+Provide an argument that is not null or empty, and then try the command again.
+At C:\Events\GroupBy28Oct2020\Demo\Security\PrivateEndpoint-SQLDB.ps1:90 char:97
++ ... ivatelink.database.windows.net" -PrivateDnsZoneId $dnszone.ResourceId
++                                                       ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneConfig], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZone
+   ConfigCommand
+
+>> TerminatingError(New-AzPrivateDnsZoneGroup): "Cannot bind argument to parameter 'PrivateDnsZoneConfig' because it is null."
+New-AzPrivateDnsZoneGroup : Cannot bind argument to parameter 'PrivateDnsZoneConfig' because it is null.
+At C:\Events\GroupBy28Oct2020\Demo\Security\PrivateEndpoint-SQLDB.ps1:92 char:146
++ ... ndpointname -name "dnszonegroup" -PrivateDnsZoneConfig $config -Force
++                                                            ~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneGroup], ParameterBindingValidationException
+    + FullyQualifiedErrorId : 
+ParameterArgumentValidationErrorNullNotAllowed,Microsoft.Azure.Commands.Network.NewAzurePrivateDnsZoneGroupCommand
+New-AzPrivateDnsZoneGroup : Cannot bind argument to parameter 'PrivateDnsZoneConfig' because it is null.
+At C:\Events\GroupBy28Oct2020\Demo\Security\PrivateEndpoint-SQLDB.ps1:92 char:146
++ ... ndpointname -name "dnszonegroup" -PrivateDnsZoneConfig $config -Force
++                                                            ~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [New-AzPrivateDnsZoneGroup], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.Azure.Commands.Network.NewAzure
+   PrivateDnsZoneGroupCommand
+
+
+ResourceGroupName        : Demo
+ServerName               : azsosqlserver
+Location                 : eastus
+SqlAdministratorLogin    : aosama
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+Identity                 :
+FullyQualifiedDomainName : azsosqlserver.database.windows.net
+ResourceId               : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/Demo/providers/Microsoft.
+                           Sql/servers/azsosqlserver
+MinimalTlsVersion        :
+PublicNetworkAccess      : Disabled
+
+
+
+^. {
+>> . {
+Set-Location "C:\Events\GroupBy28Oct2020\Demo\Security"
+.\PrivateEndpoint-SQLDB.ps1 -vnetname demo-vnet `
+-PrivateEndpointname sqlprivateendpoint `
+-resourcegroup demo `
+-subnetname appnet `
+-sqlserver azsosqlserver `
+-AzureProfileFilePath C:\Events\GroupBy28Oct2020\MyAzureProfile.json
+}
+Transcript started, output file is .\log\PrivateEndpoint-SQLDB.txt
+
+
+Name                                : sqlprivateendpoint
+Type                                : Microsoft.Network/privateEndpoints
+Location                            : eastus
+ResourceGroupName                   : demo
+ProvisioningState                   : Succeeded
+Etag                                : W/"e9ee4e50-769a-4b85-8b19-b1572efbb332"
+Id                                  : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers
+                                      /Microsoft.Network/privateEndpoints/sqlprivateendpoint
+Subnet                              : {
+                                        "Id": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/
+                                      providers/Microsoft.Network/virtualNetworks/demo-vnet/subnets/appnet",
+                                        "IpAllocations": []
+                                      }
+NetworkInterfaces                   : [
+                                        {
+                                          "Id": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/dem
+                                      o/providers/Microsoft.Network/networkInterfaces/sqlprivateendpoint.nic.86fd067b-c
+                                      be7-4005-bef7-f638e4d61e53"
+                                        }
+                                      ]
+PrivateLinkServiceConnections       : [
+                                        {
+                                          "ProvisioningState": "Succeeded",
+                                          "PrivateLinkServiceId": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/
+                                      resourceGroups/Demo/providers/Microsoft.Sql/servers/azsosqlserver",
+                                          "GroupIds": [
+                                            "sqlServer"
+                                          ],
+                                          "PrivateLinkServiceConnectionState": {
+                                            "Status": "Approved",
+                                            "Description": "Auto-approved",
+                                            "ActionRequired": "None"
+                                          },
+                                          "Name": "sqlprivateendpoint_connection",
+                                          "Etag": "W/\"e9ee4e50-769a-4b85-8b19-b1572efbb332\"",
+                                          "Id": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/dem
+                                      o/providers/Microsoft.Network/privateEndpoints/sqlprivateendpoint/privateLinkServ
+                                      iceConnections/sqlprivateendpoint_connection"
+                                        }
+                                      ]
+ManualPrivateLinkServiceConnections : []
+CustomDnsConfigs                    : [
+                                        {
+                                          "Fqdn": "azsosqlserver.database.windows.net",
+                                          "IpAddresses": [
+                                            "10.0.3.5"
+                                          ]
+                                        }
+                                      ]
+
+
+Name                    : vnetdnszonelink
+ResourceId              : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.N
+                          etwork/privateDnsZones/privatelink.database.windows.net/virtualNetworkLinks/vnetdnszonelink
+ResourceGroupName       : demo
+ZoneName                : privatelink.database.windows.net
+VirtualNetworkId        : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.N
+                          etwork/virtualNetworks/demo-vnet
+Location                :
+Etag                    : "970033d3-0000-0100-0000-5f9909720000"
+Tags                    :
+RegistrationEnabled     : False
+VirtualNetworkLinkState : Completed
+ProvisioningState       : Succeeded
+
+
+ProvisioningState         : Succeeded
+PrivateDnsZoneConfigs     : {privatelink.database.windows.net}
+PrivateDnsZoneConfigsText : [
+                              {
+                                "Name": "privatelink.database.windows.net",
+                                "PrivateDnsZoneId": "/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups
+                            /demo/providers/Microsoft.Network/privateDnsZones/privatelink.database.windows.net",
+                                "RecordSets": [
+                                  {
+                                    "RecordType": "A",
+                                    "RecordSetName": "azsosqlserver",
+                                    "Fqdn": "azsosqlserver.privatelink.database.windows.net",
+                                    "ProvisioningState": "Succeeded",
+                                    "Ttl": 10,
+                                    "IpAddresses": [
+                                      "10.0.3.5"
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+Name                      : dnszonegroup
+Etag                      : W/"63c21ab4-1b05-4cd7-93b6-5a614aebfbaa"
+Id                        : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft
+                            .Network/privateEndpoints/sqlprivateendpoint/privateDnsZoneGroups/dnszonegroup
+
+
+ResourceGroupName        : Demo
+ServerName               : azsosqlserver
+Location                 : eastus
+SqlAdministratorLogin    : aosama
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+Identity                 :
+FullyQualifiedDomainName : azsosqlserver.database.windows.net
+ResourceId               : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/Demo/providers/Microsoft.
+                           Sql/servers/azsosqlserver
+MinimalTlsVersion        :
+PublicNetworkAccess      : Disabled
+
+
+
+^. {
+>> . {
+Set-Location -Path "C:\Events\GroupBy28Oct2020\Demo\HA&DR"
+.\Manage-ActiveGeoReplication.ps1 -ResourceGroup demo `
+-PrimarySQLServer azsosqlserver `
+-Username aosama `
+-Password Awesome@1234 `
+-SecondarySQLServer azsosqlservergeosecondary `
+-SecondaryServerLocation eastus2 `
+-DatabasesToReplicate stackoverflow2010test `
+-Operation "Enable" `
+-AzureProfileFilePath "C:\Events\GroupBy28Oct2020\MyAzureProfile.json" `
+-Failover $False 
+}
+Transcript started, output file is .\Log\Manage-ActiveGeoReplication.txt
+Provisioning Azure SQL Server azsosqlservergeosecondary
+
+
+ResourceGroupName        : demo
+ServerName               : azsosqlservergeosecondary
+Location                 : eastus2
+SqlAdministratorLogin    : aosama
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+Identity                 :
+FullyQualifiedDomainName : azsosqlservergeosecondary.database.windows.net
+ResourceId               : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.
+                           Sql/servers/azsosqlservergeosecondary
+MinimalTlsVersion        :
+PublicNetworkAccess      : Enabled
+
+Replicating database stackoverflow2010test to azsosqlservergeosecondary
+LinkId                   : ed0d7f15-0a9d-4744-afec-a042a2873562
+ResourceGroupName        : demo
+ServerName               : azsosqlserver
+DatabaseName             : stackoverflow2010test
+Role                     : Primary
+Location                 : East US
+PartnerResourceGroupName : demo
+PartnerServerName        : azsosqlservergeosecondary
+PartnerDatabaseName      : stackoverflow2010test
+PartnerRole              : Secondary
+PartnerLocation          : East US 2
+AllowConnections         : All
+ReplicationState         : CATCH_UP
+PercentComplete          : 100
+StartTime                : 10/28/2020 6:05:51 AM
+
+
+
+^. {
+>> . {
+Set-Location -Path "C:\Events\GroupBy28Oct2020\Demo\HA&DR"
+.\Manage-FailoverGroup.ps1 -ResourceGroup demo `
+-PrimarySqlServer azsosqlserver `
+-UserName aosama `
+-Password Awesome@1234 `
+-SecondarySqlServer azsosqlserverfailovergroupsecondary `
+-SecondaryServerLocation eastus2 `
+-Failover $False `
+-DatabasesToReplicate stackoverflow2010test `
+-FailoverGroupName aoazgroup `
+-Operation "Create" `
+-AzureProfileFilePath C:\Events\GroupBy28Oct2020\MyAzureProfile.json
+}
+Transcript started, output file is .\Log\Manage-FailoverGroup.txt
+Provisioning Azure SQL Server azsosqlserverfailovergroupsecondary
+
+
+ResourceGroupName        : demo
+ServerName               : azsosqlserverfailovergroupsecondary
+Location                 : eastus2
+SqlAdministratorLogin    : aosama
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+Identity                 :
+FullyQualifiedDomainName : azsosqlserverfailovergroupsecondary.database.windows.net
+ResourceId               : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.
+                           Sql/servers/azsosqlserverfailovergroupsecondary
+MinimalTlsVersion        :
+PublicNetworkAccess      : Enabled
+
+Creating the failover group aoazgroup
+New-AzSqlDatabaseFailoverGroup : FailoverGroupDnsRecordInUse: The endpoint 'aoazgroup' is already in use. Use a 
+different Failover Group name.
+At C:\Events\GroupBy28Oct2020\Demo\HA&DR\Manage-FailoverGroup.ps1:79 char:1
++ New-AzSqlDatabaseFailoverGroup `
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzSqlDatabaseFailoverGroup], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.FailoverGroup.Cmdlet.NewAzureSqlFailoverGroup
+New-AzSqlDatabaseFailoverGroup : FailoverGroupDnsRecordInUse: The endpoint 'aoazgroup' is already in use. Use a
+different Failover Group name.
+At C:\Events\GroupBy28Oct2020\Demo\HA&DR\Manage-FailoverGroup.ps1:79 char:1
++ New-AzSqlDatabaseFailoverGroup `
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [New-AzSqlDatabaseFailoverGroup], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.FailoverGroup.Cmdlet.NewAzureSqlFailoverGroup
+
+Adding database stackoverflow2010test to failover group aoazgroup
+Add-AzSqlDatabaseToFailoverGroup : ResourceNotFound: The requested resource of type 
+'Microsoft.Sql/servers/failoverGroups' with name 'aoazgroup' was not found.
+At C:\Events\GroupBy28Oct2020\Demo\HA&DR\Manage-FailoverGroup.ps1:97 char:9
++         Add-AzSqlDatabaseToFailoverGroup -ResourceGroupName $Resource ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Add-AzSqlDatabaseToFailoverGroup], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.FailoverGroup.Cmdlet.AddAzureSqlDatabaseToFailoverGroup
+Add-AzSqlDatabaseToFailoverGroup : ResourceNotFound: The requested resource of type
+'Microsoft.Sql/servers/failoverGroups' with name 'aoazgroup' was not found.
+At C:\Events\GroupBy28Oct2020\Demo\HA&DR\Manage-FailoverGroup.ps1:97 char:9
++         Add-AzSqlDatabaseToFailoverGroup -ResourceGroupName $Resource ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Add-AzSqlDatabaseToFailoverGroup], CloudException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.FailoverGroup.Cmdlet.AddAzureSqlDatabaseToFailoverGroup
+
+
+
+^. {
+>> . {
+Set-Location -Path "C:\Events\GroupBy28Oct2020\Demo\HA&DR"
+.\Manage-FailoverGroup.ps1 -ResourceGroup demo `
+-PrimarySqlServer azsosqlserver `
+-UserName aosama `
+-Password Awesome@1234 `
+-SecondarySqlServer azsosqlserverfailovergroupsecondary `
+-SecondaryServerLocation eastus2 `
+-Failover $False `
+-DatabasesToReplicate stackoverflow2010test `
+-FailoverGroupName azsogroup `
+-Operation "Create" `
+-AzureProfileFilePath C:\Events\GroupBy28Oct2020\MyAzureProfile.json
+}
+Transcript started, output file is .\Log\Manage-FailoverGroup.txt
+
+
+ResourceGroupName        : demo
+ServerName               : azsosqlserverfailovergroupsecondary
+Location                 : eastus2
+SqlAdministratorLogin    : aosama
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+Identity                 :
+FullyQualifiedDomainName : azsosqlserverfailovergroupsecondary.database.windows.net
+ResourceId               : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/providers/Microsoft.
+                           Sql/servers/azsosqlserverfailovergroupsecondary
+MinimalTlsVersion        :
+PublicNetworkAccess      : Enabled
+
+
+Creating the failover group azsogroup
+ResourceGroupName                    : Demo
+ServerName                           : azsosqlserver
+FailoverGroupName                    : azsogroup
+FailoverGroupReadWriteEndpoint       :
+FailoverGroupReadOnlyEndpoint        :
+PartnerServers                       : {/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/provide
+                                       rs/Microsoft.Sql/servers/azsosqlserverfailovergroupsecondary}
+PartnerResourceGroupName             : demo
+PartnerServerName                    : azsosqlserverfailovergroupsecondary
+PartnerLocation                      : East US 2
+Databases                            : {}
+DatabaseNames                        : {}
+ReplicationRole                      : Primary
+ReplicationState                     : CATCH_UP
+ReadWriteFailoverPolicy              : Automatic
+FailoverWithDataLossGracePeriodHours : 1
+ReadOnlyFailoverPolicy               : Disabled
+Id                                   : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/Demo/provider
+                                       s/Microsoft.Sql/servers/azsosqlserver/failoverGroups/azsogroup
+Location                             : East US
+Kind                                 :
+Tags                                 :
+
+Adding database stackoverflow2010test to failover group azsogroup
+ResourceGroupName                    : Demo
+ServerName                           : azsosqlserver
+FailoverGroupName                    : azsogroup
+FailoverGroupReadWriteEndpoint       :
+FailoverGroupReadOnlyEndpoint        :
+PartnerServers                       : {/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo/provide
+                                       rs/Microsoft.Sql/servers/azsosqlserverfailovergroupsecondary}
+PartnerResourceGroupName             : demo
+PartnerServerName                    : azsosqlserverfailovergroupsecondary
+PartnerLocation                      : East US 2
+Databases                            : {/subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/Demo/provide
+                                       rs/Microsoft.Sql/servers/azsosqlserver/databases/stackoverflow2010test}
+DatabaseNames                        : {stackoverflow2010test}
+ReplicationRole                      : Primary
+ReplicationState                     : CATCH_UP
+ReadWriteFailoverPolicy              : Automatic
+FailoverWithDataLossGracePeriodHours : 1
+ReadOnlyFailoverPolicy               : Disabled
+Id                                   : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/Demo/provider
+                                       s/Microsoft.Sql/servers/azsosqlserver/failoverGroups/azsogroup
+Location                             : East US
+Kind                                 :
+Tags                                 :
+
+
+
+^. {
+>> . {
+Remove-AzSQLServer -ServerName azsosqlserver -ResourceGroupName demo
+}
+
+
+ResourceGroupName        : Demo
+ServerName               : azsosqlserver
+Location                 : eastus
+SqlAdministratorLogin    : aosama
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+Identity                 :
+FullyQualifiedDomainName : azsosqlserver.database.windows.net
+ResourceId               : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/Demo/providers/Microsoft.
+                           Sql/servers/azsosqlserver
+MinimalTlsVersion        :
+PublicNetworkAccess      : Disabled
+
+
+
+^. {
+>> . {
+set-location -path "C:\Events\GroupBy28Oct2020\Demo"
+ .\ProvisionAzureSQLDatabase.ps1 -ResourceGroup Demo `
+ -Location eastus `
+ -SQLServer azsosqlserver `
+ -UserName aosama `
+ -Password Awesome@1234 `
+ -SQLDatabase stackoverflow2010test `
+ -Edition basic `
+ -AzureProfileFilePath C:\Events\GroupBy28Oct2020\MyAzureProfile.json
+}
+Transcript started, output file is .\log\ProvisionAzureSQLDatabase.txt
+
+
+ResourceGroupName : demo
+Location          : eastus
+ProvisioningState : Succeeded
+Tags              :
+ResourceId        : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo
+
+
+Provisioning Azure SQL Server azsosqlserver
+
+ResourceGroupName        : Demo
+ServerName               : azsosqlserver
+Location                 : eastus
+SqlAdministratorLogin    : aosama
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+Identity                 :
+FullyQualifiedDomainName : azsosqlserver.database.windows.net
+ResourceId               : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/Demo/providers/Microsoft.
+                           Sql/servers/azsosqlserver
+MinimalTlsVersion        :
+PublicNetworkAccess      : Enabled
+
+Provisioning Azure SQL Database stackoverflow2010test
+
+ResourceGroupName             : Demo
+ServerName                    : azsosqlserver
+DatabaseName                  : stackoverflow2010test
+Location                      : eastus
+DatabaseId                    : 29cbcada-3fcb-4b14-8087-c25371fed26c
+Edition                       : Basic
+CollationName                 : SQL_Latin1_General_CP1_CI_AS
+CatalogCollation              :
+MaxSizeBytes                  : 2147483648
+Status                        : Online
+CreationDate                  : 10/28/2020 6:58:11 AM
+CurrentServiceObjectiveId     : 00000000-0000-0000-0000-000000000000
+CurrentServiceObjectiveName   : Basic
+RequestedServiceObjectiveName : Basic
+RequestedServiceObjectiveId   :
+ElasticPoolName               :
+EarliestRestoreDate           : 10/28/2020 7:28:11 AM
+Tags                          :
+ResourceId                    : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/Demo/providers/Micro
+                                soft.Sql/servers/azsosqlserver/databases/stackoverflow2010test
+CreateMode                    :
+ReadScale                     : Disabled
+ZoneRedundant                 : False
+Capacity                      : 5
+Family                        :
+SkuName                       : Basic
+LicenseType                   :
+AutoPauseDelayInMinutes       :
+MinimumCapacity               :
+ReadReplicaCount              : 0
+BackupStorageRedundancy       : Geo
+
+Creating firewall rule for  with StartIP: 40.87.97.63 and EndIP: 40.87.97.63
+
+ResourceGroupName : Demo
+ServerName        : azsosqlserver
+StartIpAddress    : 40.87.97.63
+EndIpAddress      : 40.87.97.63
+FirewallRuleName  : Home_20201028061022
+
+
+
+^. {
+>> . {
+set-location -path "C:\Events\GroupBy28Oct2020\Demo"
+ .\ProvisionAzureSQLDatabase.ps1 -ResourceGroup Demo `
+ -Location eastus `
+ -SQLServer azsosqlserver `
+ -UserName aosama `
+ -Password "Awesome@1234" `
+ -SQLDatabase stackoverflow2010test `
+ -Edition basic `
+ -AzureProfileFilePath C:\Events\GroupBy28Oct2020\MyAzureProfile.json
+}
+Transcript started, output file is .\log\ProvisionAzureSQLDatabase.txt
+
+
+ResourceGroupName : demo
+Location          : eastus
+ProvisioningState : Succeeded
+Tags              :
+ResourceId        : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/demo
+
+
+Provisioning Azure SQL Server azsosqlserver
+
+ResourceGroupName        : Demo
+ServerName               : azsosqlserver
+Location                 : eastus
+SqlAdministratorLogin    : aosama
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+Identity                 :
+FullyQualifiedDomainName : azsosqlserver.database.windows.net
+ResourceId               : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/Demo/providers/Microsoft.
+                           Sql/servers/azsosqlserver
+MinimalTlsVersion        :
+PublicNetworkAccess      : Enabled
+
+Provisioning Azure SQL Database stackoverflow2010test
+
+ResourceGroupName             : Demo
+ServerName                    : azsosqlserver
+DatabaseName                  : stackoverflow2010test
+Location                      : eastus
+DatabaseId                    : 24f63a0c-51d0-4fe2-81ad-4da3373ba986
+Edition                       : Basic
+CollationName                 : SQL_Latin1_General_CP1_CI_AS
+CatalogCollation              :
+MaxSizeBytes                  : 2147483648
+Status                        : Online
+CreationDate                  : 10/28/2020 7:12:20 AM
+CurrentServiceObjectiveId     : 00000000-0000-0000-0000-000000000000
+CurrentServiceObjectiveName   : Basic
+RequestedServiceObjectiveName : Basic
+RequestedServiceObjectiveId   :
+ElasticPoolName               :
+EarliestRestoreDate           : 10/28/2020 7:42:20 AM
+Tags                          :
+ResourceId                    : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/Demo/providers/Micro
+                                soft.Sql/servers/azsosqlserver/databases/stackoverflow2010test
+CreateMode                    :
+ReadScale                     : Disabled
+ZoneRedundant                 : False
+Capacity                      : 5
+Family                        :
+SkuName                       : Basic
+LicenseType                   :
+AutoPauseDelayInMinutes       :
+MinimumCapacity               :
+ReadReplicaCount              : 0
+BackupStorageRedundancy       : Geo
+
+Creating firewall rule for  with StartIP: 40.87.97.63 and EndIP: 40.87.97.63
+
+ResourceGroupName : Demo
+ServerName        : azsosqlserver
+StartIpAddress    : 40.87.97.63
+EndIpAddress      : 40.87.97.63
+FirewallRuleName  : Home_20201028071034
+
+
+
